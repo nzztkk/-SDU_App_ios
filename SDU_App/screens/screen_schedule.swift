@@ -13,34 +13,35 @@ struct Course {
     var time: String
     var title: String
     var location: String
-    var type: String // Новое поле для типа занятия: "Лекция" или "Практика"
+    var type: String
+    var professor: String // Добавляем поле для имени преподавателя
 }
 
 struct SchedulePage: View {
     @State private var expandedDays: Set<String> = [] // Хранение информации о развернутых днях
     
     let courses: [Course] = [
-        Course(day: "Понедельник", time: "08:30 - 09:20", title: "Модуль социально-политических знаний (Политология)", location: "VR Room 96", type: "Лекция"),
-        Course(day: "Понедельник", time: "10:30 - 11:20", title: "Методы исследования и инструменты", location: "VR Room 53", type: "Лекция"),
-        Course(day: "Понедельник", time: "11:30 - 12:20", title: "Методы исследования и инструменты", location: "VR Room 53", type: "Лекция"),
-        Course(day: "Понедельник", time: "15:30 - 16:20", title: "Методы исследования и инструменты", location: "VR Room 1", type: "Практика"),
+        Course(day: "Понедельник", time: "08:30 - 09:20", title: "Модуль социально-политических знаний (Политология)", location: "VR Room 96", type: "Лекция", professor: "Еркебұлан Ақбердиев"),
+        Course(day: "Понедельник", time: "10:30 - 11:20", title: "Методы исследования и инструменты", location: "VR Room 53", type: "Лекция", professor: "Жуманияз Маматнабиев"),
+        Course(day: "Понедельник", time: "11:30 - 12:20", title: "Методы исследования и инструменты", location: "VR Room 53", type: "Лекция", professor: "Жуманияз Маматнабиев"),
+        Course(day: "Понедельник", time: "15:30 - 16:20", title: "Методы исследования и инструменты", location: "VR Room 1", type: "Практика", professor: "Жуманияз Маматнабиев"),
         
-        Course(day: "Вторник", time: "16:30 - 17:20", title: "Компьютерные сети 1", location: "E221", type: "Лекция"),
+        Course(day: "Вторник", time: "16:30 - 17:20", title: "Компьютерные сети 1", location: "E221", type: "Лекция", professor: "Бауыржан Берліқожа"),
         
-        Course(day: "Среда", time: "15:30 - 16:20", title: "Саморазвитие в области компьютерных наук", location: "VR 2", type: "Лекция"),
-        Course(day: "Среда", time: "16:30 - 17:20", title: "Саморазвитие в области компьютерных наук", location: "VR 2", type: "Лекция"),
-        Course(day: "Среда", time: "17:30 - 18:20", title: "Саморазвитие в области компьютерных наук", location: "VR 2", type: "Лекция"),
+        Course(day: "Среда", time: "15:30 - 16:20", title: "Саморазвитие в области компьютерных наук", location: "VR 2", type: "Лекция", professor: "Алина Беделханова"),
+        Course(day: "Среда", time: "16:30 - 17:20", title: "Саморазвитие в области компьютерных наук", location: "VR 2", type: "Лекция", professor: "Алина Беделханова"),
+        Course(day: "Среда", time: "17:30 - 18:20", title: "Саморазвитие в области компьютерных наук", location: "VR 2", type: "Лекция", professor: "Алина Беделханова"),
         
-        Course(day: "Четверг", time: "12:30 - 13:20", title: "UX/UI дизайн", location: "SL 1 (Stud Life 202)", type: "Лекция"),
-        Course(day: "Четверг", time: "13:30 - 14:20", title: "UX/UI дизайн", location: "SL 1 (Stud Life 202)", type: "Лекция"),
+        Course(day: "Четверг", time: "12:30 - 13:20", title: "UX/UI дизайн", location: "SL 1 (Stud Life 202)", type: "Лекция", professor: "Али Байгеленов"),
+        Course(day: "Четверг", time: "13:30 - 14:20", title: "UX/UI дизайн", location: "SL 1 (Stud Life 202)", type: "Лекция", professor: "Али Байгеленов"),
         
-        Course(day: "Пятница", time: "8:30 - 9:20", title: "Компьютерные сети 1", location: "F103", type: "Практика"),
-        Course(day: "Пятница", time: "9:30 - 10:20", title: "Компьютерные сети 1", location: "F103", type: "Практика"),
-        Course(day: "Пятница", time: "10:30 - 11:20", title: "UX/UI дизайн", location: "G108", type: "Практика"),
+        Course(day: "Пятница", time: "8:30 - 9:20", title: "Компьютерные сети 1", location: "F103", type: "Практика", professor: "Нұрбол Молдабай"),
+        Course(day: "Пятница", time: "9:30 - 10:20", title: "Компьютерные сети 1", location: "F103", type: "Практика", professor: "Нұрбол Молдабай"),
+        Course(day: "Пятница", time: "10:30 - 11:20", title: "UX/UI дизайн", location: "G108", type: "Практика", professor: "Али Байгеленов"),
         
-        Course(day: "Суббота", time: "8:30 - 9:20", title: "Тестирование и валидация программного обеспечения", location: "VR 33", type: "Лекция"),
-        Course(day: "Суббота", time: "9:30 - 10:20", title: "Тестирование и валидация программного обеспечения", location: "VR 33", type: "Лекция"),
-        Course(day: "Суббота", time: "14:30 - 15:20", title: "Тестирование и валидация программного обеспечения", location: "VR 33", type: "Практика"),
+        Course(day: "Суббота", time: "8:30 - 9:20", title: "Тестирование и валидация программного обеспечения", location: "VR 33", type: "Лекция", professor: "Назым Тұрысбек"),
+        Course(day: "Суббота", time: "9:30 - 10:20", title: "Тестирование и валидация программного обеспечения", location: "VR 33", type: "Лекция", professor: "Назым Тұрысбек"),
+        Course(day: "Суббота", time: "14:30 - 15:20", title: "Тестирование и валидация программного обеспечения", location: "VR 33", type: "Практика", professor: "Назым Тұрысбек"),
     ]
     
     var body: some View {
@@ -109,7 +110,7 @@ struct DaySection: View {
                 HStack {
                     Text(day)
                         .font(.headline)
-                        .foregroundColor(.black) // Оставляем черный текст
+                        .foregroundColor(.primary) // Используем адаптивный цвет
                     Spacer()
                     Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
                         .foregroundColor(.blue)
@@ -143,7 +144,10 @@ struct CourseItem: View {
             }
             Text(course.title)
                 .font(.body)
-                .foregroundColor(.black) // Оставляем текст черным
+                .foregroundColor(.primary) // Используем адаптивный цвет для темы
+            Text(course.professor) // Добавляем преподавателя
+                .font(.footnote)
+                .foregroundColor(.secondary) // Вторичный цвет для текста
             Text(course.location)
                 .font(.footnote)
                 .foregroundColor(.gray)
