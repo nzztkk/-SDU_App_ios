@@ -1,0 +1,19 @@
+/* 
+  strings.strings
+  SDU_App
+
+  Created by Nurkhat on 12.09.2024.
+  
+*/
+
+
+"welcome_message" = "Welcome to the app!";
+"login_button" = "Login";
+"signup_button" = "Sign Up";
+
+//Pages
+"schedule_p" = "Schedule";
+"courses_p" = "Courses";
+"deadlines_p" = "Deadlines";
+
+

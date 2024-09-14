@@ -1,0 +1,106 @@
+/* 
+  courses_details.strings
+  SDU_App
+
+  Created by Nurkhat on 13.09.2024.
+  
+*/
+
+// COURSES CODES
+
+"c_code_mde_151" = "MDE 151";
+"c_code_css_410" = "CSS 410";
+"c_code_css_312" = "CSS 312";
+"c_code_inf_405" = "INF 405";
+"c_code_inf_228" = "INF 228";
+"c_code_css_319" = "CSS 319";
+"c_code_" = "example";
+
+
+// COURSES FULL NAME
+
+"c_name_mde_151" = "Модуль социально-политических знаний (Политология)";
+"c_name_css_410" = "Методы исследования и инструменты";
+"c_name_css_312" = "Компьютерные сети 1";
+"c_name_inf_405" = "Саморазвитие в области компьютерных наук";
+"c_name_inf_228" = "UX/UI дизайн";
+"c_name_css_319" = "Тестирование и валидация программного обеспечения";
+
+//COURSES TEACHERS NAME
+
+"c_teacher_name_mde_151" = "Еркебұлан Ақбердиев";
+"c_teacher_name_css_410" = "Жуманияз Маматнабиев";
+"c_teacher_name_css_312_l" = "Бауыржан Берліқожа";
+"c_teacher_name_css_312_p" = "Нұрбол Молдабай";
+"c_teacher_name_inf_405" = "Алина Беделханова";
+"c_teacher_name_inf_228" = "Али Байгеленов";
+"c_teacher_name_css_319" = "Назым Тұрысбек";
+
+// CLASSROOMS
+
+"cr_a1" = "A 1XX";
+"cr_a2" = "A 2XX";
+"cr_a3" = "A 3XX";
+
+"cr_b1" = "B 1XX";
+"cr_b2" = "B 2XX";
+"cr_b3" = "B 3XX";
+
+"cr_c1" = "C 1XX";
+"cr_c2" = "C 2XX";
+"cr_c3" = "C 3XX";
+
+"cr_d1" = "D 1XX";
+"cr_d2" = "D 2XX";
+"cr_d3" = "D 3XX";
+
+"cr_e1" = "E 1XX";
+"cr_e2" = "E 2XX";
+"cr_e3" = "E 3XX";
+
+"cr_f1" = "F 1XX";
+"cr_f2" = "F 2XX";
+"cr_f3" = "F 3XX";
+
+"cr_g1" = "G 1XX";
+"cr_g2" = "G 2XX";
+"cr_g3" = "G 3XX";
+
+"cr_h1" = "H 1XX";
+"cr_h2" = "H 2XX";
+"cr_h3" = "H 3XX";
+
+// COURSES TIME
+
+"ct_1_start" = "8:30";
+"ct_2_start" = "9:30";
+"ct_3_start" = "10:30";
+"ct_4_start" = "11:30";
+"ct_5_start" = "12:30";
+"ct_6_start" = "13:30";
+"ct_7_start" = "14:30";
+"ct_8_start" = "15:30";
+"ct_9_start" = "16:30";
+"ct_10_start" = "17:30";
+"ct_11_start" = "18:30";
+"ct_12_start" = "19:30";
+"ct_13_start" = "20:30";
+"ct_14_start" = "21:30";
+
+"ct_1_end" = "9:20";
+"ct_2_end" = "10:20";
+"ct_3_end" = "11:20";
+"ct_4_end" = "12:20";
+"ct_5_end" = "13:20";
+"ct_6_end" = "14:20";
+"ct_7_end" = "15:20";
+"ct_8_end" = "16:20";
+"ct_9_end" = "17:20";
+"ct_10_end" = "18:20";
+"ct_11_end" = "19:20";
+"ct_12_end" = "20:20";
+"ct_13_end" = "21:20";
+"ct_14_end" = "22:20";
+
+
+
