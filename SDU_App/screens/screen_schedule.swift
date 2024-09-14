@@ -8,60 +8,119 @@
 import Foundation
 import SwiftUI
 
+
+
 struct Course {
     var day: String
     var time: String
     var title: String
     var location: String
     var type: String
-    var professor: String // Добавляем поле для имени преподавателя
+    var professor: String
+}
+
+
+
+extension String {
+    var lc: String {
+        return NSLocalizedString(self, tableName: "courses_details", bundle: .main, value: "", comment: "")
+    }
+    
+    var weeks: String {
+        return NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: "", comment: "")
+    }
 }
 
 struct SchedulePage: View {
     @State private var expandedDays: Set<String> = [] // Хранение информации о развернутых днях
+
+    let courses: [Course]
+
+    init() {
     
-    let courses: [Course] = [
-        Course(day: "Понедельник", time: "08:30 - 09:20", title: "Модуль социально-политических знаний (Политология)", location: "VR Room 96", type: "Лекция", professor: "Еркебұлан Ақбердиев"),
-        Course(day: "Понедельник", time: "10:30 - 11:20", title: "Методы исследования и инструменты", location: "VR Room 53", type: "Лекция", professor: "Жуманияз Маматнабиев"),
-        Course(day: "Понедельник", time: "11:30 - 12:20", title: "Методы исследования и инструменты", location: "VR Room 53", type: "Лекция", professor: "Жуманияз Маматнабиев"),
-        Course(day: "Понедельник", time: "15:30 - 16:20", title: "Методы исследования и инструменты", location: "VR Room 1", type: "Практика", professor: "Жуманияз Маматнабиев"),
-        
-        Course(day: "Вторник", time: "16:30 - 17:20", title: "Компьютерные сети 1", location: "E221", type: "Лекция", professor: "Бауыржан Берліқожа"),
-        
-        Course(day: "Среда", time: "15:30 - 16:20", title: "Саморазвитие в области компьютерных наук", location: "VR 2", type: "Лекция", professor: "Алина Беделханова"),
-        Course(day: "Среда", time: "16:30 - 17:20", title: "Саморазвитие в области компьютерных наук", location: "VR 2", type: "Лекция", professor: "Алина Беделханова"),
-        Course(day: "Среда", time: "17:30 - 18:20", title: "Саморазвитие в области компьютерных наук", location: "VR 2", type: "Лекция", professor: "Алина Беделханова"),
-        
-        Course(day: "Четверг", time: "12:30 - 13:20", title: "UX/UI дизайн", location: "SL 1 (Stud Life 202)", type: "Лекция", professor: "Али Байгеленов"),
-        Course(day: "Четверг", time: "13:30 - 14:20", title: "UX/UI дизайн", location: "SL 1 (Stud Life 202)", type: "Лекция", professor: "Али Байгеленов"),
-        
-        Course(day: "Пятница", time: "8:30 - 9:20", title: "Компьютерные сети 1", location: "F103", type: "Практика", professor: "Нұрбол Молдабай"),
-        Course(day: "Пятница", time: "9:30 - 10:20", title: "Компьютерные сети 1", location: "F103", type: "Практика", professor: "Нұрбол Молдабай"),
-        Course(day: "Пятница", time: "10:30 - 11:20", title: "UX/UI дизайн", location: "G108", type: "Практика", professor: "Али Байгеленов"),
-        
-        Course(day: "Суббота", time: "8:30 - 9:20", title: "Тестирование и валидация программного обеспечения", location: "VR 33", type: "Лекция", professor: "Назым Тұрысбек"),
-        Course(day: "Суббота", time: "9:30 - 10:20", title: "Тестирование и валидация программного обеспечения", location: "VR 33", type: "Лекция", professor: "Назым Тұрысбек"),
-        Course(day: "Суббота", time: "14:30 - 15:20", title: "Тестирование и валидация программного обеспечения", location: "VR 33", type: "Практика", professor: "Назым Тұрысбек"),
-    ]
-    
+
+        // Инициализируем курсы, группируя их по дням недели
+        courses = SchedulePage.generateCourses()
+    }
+
+    static func generateCourses() -> [Course] {
+        var allCourses: [Course] = []
+
+        // Функция для создания курсов для конкретного дня
+        func coursesForDay(_ dayKey: String, _ courseData: [(timeStartKey: String, timeEndKey: String, titleKey: String, locationKey: String, typeKey: String, professorKey: String)]) {
+            let day = dayKey.weeks
+            let dayCourses = courseData.map { data in
+                Course(
+                    day: day,
+                    time: data.timeStartKey.lc + " - " + data.timeEndKey.lc,
+                    title: data.titleKey.lc,
+                    location: data.locationKey.lc,
+                    type: data.typeKey.lc,
+                    professor: data.professorKey.lc
+                )
+            }
+            allCourses.append(contentsOf: dayCourses)
+        }
+
+        // Курсы для каждого дня
+        coursesForDay("day_mon", [
+            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_mde_151", locationKey: "cr_a1", typeKey: "Лекция", professorKey: "c_teacher_name_mde_151"),
+            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_css_410", locationKey: "cr_a2", typeKey: "Лекция", professorKey: "c_teacher_name_css_410"),
+            (timeStartKey: "ct_4_start", timeEndKey: "ct_4_end", titleKey: "c_name_css_410", locationKey: "cr_a2", typeKey: "Лекция", professorKey: "c_teacher_name_css_410"),
+            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_css_410", locationKey: "cr_a3", typeKey: "Практика", professorKey: "c_teacher_name_css_410")
+        ])
+
+        coursesForDay("day_tues", [
+            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_css_312", locationKey: "cr_e1", typeKey: "Лекция", professorKey: "c_teacher_name_css_312_l")
+        ])
+
+        coursesForDay("day_wednes", [
+            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_inf_405", locationKey: "cr_a1", typeKey: "Лекция", professorKey: "c_teacher_name_inf_405"),
+            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_inf_405", locationKey: "cr_a1", typeKey: "Лекция", professorKey: "c_teacher_name_inf_405"),
+            (timeStartKey: "ct_10_start", timeEndKey: "ct_10_end", titleKey: "c_name_inf_405", locationKey: "cr_a1", typeKey: "Лекция", professorKey: "c_teacher_name_inf_405")
+        ])
+
+        coursesForDay("day_thurs", [
+            (timeStartKey: "ct_5_start", timeEndKey: "ct_5_end", titleKey: "c_name_inf_228", locationKey: "cr_b2", typeKey: "Лекция", professorKey: "c_teacher_name_inf_228"),
+            (timeStartKey: "ct_6_start", timeEndKey: "ct_6_end", titleKey: "c_name_inf_228", locationKey: "cr_b2", typeKey: "Лекция", professorKey: "c_teacher_name_inf_228")
+        ])
+
+        coursesForDay("day_fri", [
+            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_312", locationKey: "cr_f1", typeKey: "Практика", professorKey: "c_teacher_name_css_312_p"),
+            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_312", locationKey: "cr_f1", typeKey: "Практика", professorKey: "c_teacher_name_css_312_p"),
+            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_inf_228", locationKey: "cr_g1", typeKey: "Практика", professorKey: "c_teacher_name_inf_228")
+        ])
+
+        coursesForDay("day_satur", [
+            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "Лекция", professorKey: "c_teacher_name_css_319"),
+            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "Лекция", professorKey: "c_teacher_name_css_319"),
+            (timeStartKey: "ct_7_start", timeEndKey: "ct_7_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "Практика", professorKey: "c_teacher_name_css_319")
+        ])
+
+        return allCourses
+    }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 ForEach(filteredDaysOfWeek(), id: \.self) { day in
-                    DaySection(
-                        day: day,
-                        courses: courses.filter { $0.day == day },
-                        isExpanded: expandedDays.contains(day),
-                        toggleExpanded: { toggleDayExpansion(day: day) }
-                    )
-                    .animation(.easeInOut(duration: 0.3)) // Плавная анимация при разворачивании
+                    let coursesForDay = courses.filter { $0.day == day }
+                    if !coursesForDay.isEmpty {
+                        DaySection(
+                            day: day,
+                            courses: coursesForDay,
+                            isExpanded: expandedDays.contains(day),
+                            toggleExpanded: { toggleDayExpansion(day: day) }
+                        )
+                        .animation(.easeInOut(duration: 0.3), value: expandedDays)
+                    }
                 }
             }
             .padding()
         }
-        .navigationTitle("Расписание")
+        .navigationTitle("Расписание".lc)
     }
-    
+
     // Определение дня недели и отображение расписания, начиная с текущего дня
     func filteredDaysOfWeek() -> [String] {
         let today = currentWeekday()
@@ -78,16 +137,24 @@ struct SchedulePage: View {
     func currentWeekday() -> String {
         let calendar = Calendar.current
         let date = Date()
-        let weekdayIndex = calendar.component(.weekday, from: date) // День недели как число
+        let weekdayIndex = calendar.component(.weekday, from: date) // День недели как число (1-7)
         let days = daysOfWeek()
-        return days[(weekdayIndex - 2) % 7] // Корректируем для правильного отображения в нашем массиве
+        let index = (weekdayIndex + 5) % 7 // Приводим к диапазону 0-6
+        return days[index]
     }
-    
-    // Дни недели
+
     func daysOfWeek() -> [String] {
-        return ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"]
+        return [
+            "day_mon".weeks,
+            "day_tues".weeks,
+            "day_wednes".weeks,
+            "day_thurs".weeks,
+            "day_fri".weeks,
+            "day_satur".weeks,
+            "day_sun".weeks
+        ]
     }
-    
+
     // Изменить состояние развернутости дня
     func toggleDayExpansion(day: String) {
         if expandedDays.contains(day) {
@@ -103,25 +170,25 @@ struct DaySection: View {
     var courses: [Course]
     var isExpanded: Bool
     var toggleExpanded: () -> Void
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Button(action: toggleExpanded) {
                 HStack {
                     Text(day)
                         .font(.headline)
-                        .foregroundColor(.primary) // Используем адаптивный цвет
+                        .foregroundColor(.primary)
                     Spacer()
                     Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
                         .foregroundColor(.blue)
                 }
                 .padding(.vertical, 8)
             }
-            
+
             if isExpanded {
                 ForEach(courses, id: \.time) { course in
                     CourseItem(course: course)
-                        .transition(.opacity.combined(with: .slide)) // Плавный переход для элементов
+                        .transition(.opacity.combined(with: .slide))
                 }
             }
         }
@@ -130,7 +197,7 @@ struct DaySection: View {
 
 struct CourseItem: View {
     var course: Course
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
@@ -138,16 +205,16 @@ struct CourseItem: View {
                     .font(.subheadline)
                     .foregroundColor(.gray)
                 Spacer()
-                Text(course.type) // Добавляем тип занятия (лекция или практика)
+                Text(course.type)
                     .font(.subheadline)
-                    .foregroundColor(course.type == "Лекция" ? .blue : .green)
+                    .foregroundColor(course.type == "Лекция".lc ? .blue : .green)
             }
             Text(course.title)
                 .font(.body)
-                .foregroundColor(.primary) // Используем адаптивный цвет для темы
-            Text(course.professor) // Добавляем преподавателя
+                .foregroundColor(.primary)
+            Text(course.professor)
                 .font(.footnote)
-                .foregroundColor(.secondary) // Вторичный цвет для текста
+                .foregroundColor(.secondary)
             Text(course.location)
                 .font(.footnote)
                 .foregroundColor(.gray)
@@ -157,6 +224,9 @@ struct CourseItem: View {
         .cornerRadius(10)
     }
 }
+
+
+
 
 #Preview {
     SchedulePage()

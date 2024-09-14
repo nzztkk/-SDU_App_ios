@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "141D31882C81CECE00B7D303"
-               BuildableName = "SDU_App.app"
-               BlueprintName = "SDU_App"
-               ReferencedContainer = "container:SDU_App.xcodeproj">
+               BuildableName = "SDU App.app"
+               BlueprintName = "SDU App"
+               ReferencedContainer = "container:SDU App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,9 +36,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "141D31982C81CECF00B7D303"
-               BuildableName = "SDU_AppTests.xctest"
-               BlueprintName = "SDU_AppTests"
-               ReferencedContainer = "container:SDU_App.xcodeproj">
+               BuildableName = "SDU AppTests.xctest"
+               BlueprintName = "SDU AppTests"
+               ReferencedContainer = "container:SDU App.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "141D31A22C81CECF00B7D303"
-               BuildableName = "SDU_AppUITests.xctest"
-               BlueprintName = "SDU_AppUITests"
-               ReferencedContainer = "container:SDU_App.xcodeproj">
+               BuildableName = "SDU AppUITests.xctest"
+               BlueprintName = "SDU AppUITests"
+               ReferencedContainer = "container:SDU App.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -69,9 +69,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "141D31882C81CECE00B7D303"
-            BuildableName = "SDU_App.app"
-            BlueprintName = "SDU_App"
-            ReferencedContainer = "container:SDU_App.xcodeproj">
+            BuildableName = "SDU App.app"
+            BlueprintName = "SDU App"
+            ReferencedContainer = "container:SDU App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -86,9 +86,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "141D31882C81CECE00B7D303"
-            BuildableName = "SDU_App.app"
-            BlueprintName = "SDU_App"
-            ReferencedContainer = "container:SDU_App.xcodeproj">
+            BuildableName = "SDU App.app"
+            BlueprintName = "SDU App"
+            ReferencedContainer = "container:SDU App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

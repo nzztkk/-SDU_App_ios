@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		141D318D2C81CECE00B7D303 /* SDU_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D318C2C81CECE00B7D303 /* SDU_AppApp.swift */; };
+		141D318D2C81CECE00B7D303 /* SDU_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D318C2C81CECE00B7D303 /* SDU_App.swift */; };
 		141D31912C81CECF00B7D303 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141D31902C81CECF00B7D303 /* Assets.xcassets */; };
 		141D31942C81CECF00B7D303 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141D31932C81CECF00B7D303 /* Preview Assets.xcassets */; };
 		141D319E2C81CECF00B7D303 /* SDU_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D319D2C81CECF00B7D303 /* SDU_AppTests.swift */; };
@@ -40,16 +40,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		141D31892C81CECE00B7D303 /* SDU_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDU_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		141D318C2C81CECE00B7D303 /* SDU_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDU_AppApp.swift; sourceTree = "<group>"; };
+		141D31892C81CECE00B7D303 /* SDU App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SDU App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		141D318C2C81CECE00B7D303 /* SDU_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDU_App.swift; sourceTree = "<group>"; };
 		141D31902C81CECF00B7D303 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		141D31932C81CECF00B7D303 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		141D31992C81CECF00B7D303 /* SDU_AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDU_AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		141D31992C81CECF00B7D303 /* SDU AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SDU AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		141D319D2C81CECF00B7D303 /* SDU_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDU_AppTests.swift; sourceTree = "<group>"; };
-		141D31A32C81CECF00B7D303 /* SDU_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDU_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		141D31A32C81CECF00B7D303 /* SDU AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SDU AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		141D31A72C81CECF00B7D303 /* SDU_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDU_AppUITests.swift; sourceTree = "<group>"; };
 		141D31A92C81CECF00B7D303 /* SDU_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDU_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		14D2BC332C92A11B00E4CB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		147C9DEF2C951C0400268345 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/courses_details.strings; sourceTree = "<group>"; };
+		147C9DF02C951C5C00268345 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/sys_w.strings; sourceTree = "<group>"; };
+		147C9DF72C95257800268345 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		147C9DF82C9525C000268345 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		147C9E042C954F5100268345 /* kk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kk; path = kk.lproj/courses_details.strings; sourceTree = "<group>"; };
+		147C9E052C954F5600268345 /* kk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kk; path = kk.lproj/sys_w.strings; sourceTree = "<group>"; };
+		147C9E082C9550A600268345 /* kk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kk; path = kk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		14D2BC382C92A14A00E4CB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/sys_w.strings; sourceTree = "<group>"; };
 		14D2BC3B2C93E37C00E4CB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/courses_details.strings; sourceTree = "<group>"; };
 		14E104ED2C90BA41001A7F36 /* screen_schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screen_schedule.swift; sourceTree = "<group>"; };
@@ -96,9 +102,9 @@
 		141D318A2C81CECE00B7D303 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				141D31892C81CECE00B7D303 /* SDU_App.app */,
-				141D31992C81CECF00B7D303 /* SDU_AppTests.xctest */,
-				141D31A32C81CECF00B7D303 /* SDU_AppUITests.xctest */,
+				141D31892C81CECE00B7D303 /* SDU App.app */,
+				141D31992C81CECF00B7D303 /* SDU AppTests.xctest */,
+				141D31A32C81CECF00B7D303 /* SDU AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,7 +115,7 @@
 				14E104EF2C90FD89001A7F36 /* logic */,
 				14E104EC2C90B356001A7F36 /* res */,
 				14E104EB2C90795C001A7F36 /* screens */,
-				141D318C2C81CECE00B7D303 /* SDU_AppApp.swift */,
+				141D318C2C81CECE00B7D303 /* SDU_App.swift */,
 				141D31902C81CECF00B7D303 /* Assets.xcassets */,
 				141D31922C81CECF00B7D303 /* Preview Content */,
 				14E104F02C910603001A7F36 /* ViewBox.swift */,
@@ -188,9 +194,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		141D31882C81CECE00B7D303 /* SDU_App */ = {
+		141D31882C81CECE00B7D303 /* SDU App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 141D31AD2C81CECF00B7D303 /* Build configuration list for PBXNativeTarget "SDU_App" */;
+			buildConfigurationList = 141D31AD2C81CECF00B7D303 /* Build configuration list for PBXNativeTarget "SDU App" */;
 			buildPhases = (
 				141D31852C81CECE00B7D303 /* Sources */,
 				141D31862C81CECE00B7D303 /* Frameworks */,
@@ -200,14 +206,14 @@
 			);
 			dependencies = (
 			);
-			name = SDU_App;
+			name = "SDU App";
 			productName = SDU_App;
-			productReference = 141D31892C81CECE00B7D303 /* SDU_App.app */;
+			productReference = 141D31892C81CECE00B7D303 /* SDU App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		141D31982C81CECF00B7D303 /* SDU_AppTests */ = {
+		141D31982C81CECF00B7D303 /* SDU AppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 141D31B02C81CECF00B7D303 /* Build configuration list for PBXNativeTarget "SDU_AppTests" */;
+			buildConfigurationList = 141D31B02C81CECF00B7D303 /* Build configuration list for PBXNativeTarget "SDU AppTests" */;
 			buildPhases = (
 				141D31952C81CECF00B7D303 /* Sources */,
 				141D31962C81CECF00B7D303 /* Frameworks */,
@@ -218,14 +224,14 @@
 			dependencies = (
 				141D319B2C81CECF00B7D303 /* PBXTargetDependency */,
 			);
-			name = SDU_AppTests;
+			name = "SDU AppTests";
 			productName = SDU_AppTests;
-			productReference = 141D31992C81CECF00B7D303 /* SDU_AppTests.xctest */;
+			productReference = 141D31992C81CECF00B7D303 /* SDU AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		141D31A22C81CECF00B7D303 /* SDU_AppUITests */ = {
+		141D31A22C81CECF00B7D303 /* SDU AppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 141D31B32C81CECF00B7D303 /* Build configuration list for PBXNativeTarget "SDU_AppUITests" */;
+			buildConfigurationList = 141D31B32C81CECF00B7D303 /* Build configuration list for PBXNativeTarget "SDU AppUITests" */;
 			buildPhases = (
 				141D319F2C81CECF00B7D303 /* Sources */,
 				141D31A02C81CECF00B7D303 /* Frameworks */,
@@ -236,9 +242,9 @@
 			dependencies = (
 				141D31A52C81CECF00B7D303 /* PBXTargetDependency */,
 			);
-			name = SDU_AppUITests;
+			name = "SDU AppUITests";
 			productName = SDU_AppUITests;
-			productReference = 141D31A32C81CECF00B7D303 /* SDU_AppUITests.xctest */;
+			productReference = 141D31A32C81CECF00B7D303 /* SDU AppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -264,22 +270,24 @@
 					};
 				};
 			};
-			buildConfigurationList = 141D31842C81CECE00B7D303 /* Build configuration list for PBXProject "SDU_App" */;
+			buildConfigurationList = 141D31842C81CECE00B7D303 /* Build configuration list for PBXProject "SDU App" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				kk,
 			);
 			mainGroup = 141D31802C81CECE00B7D303;
 			productRefGroup = 141D318A2C81CECE00B7D303 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				141D31882C81CECE00B7D303 /* SDU_App */,
-				141D31982C81CECF00B7D303 /* SDU_AppTests */,
-				141D31A22C81CECF00B7D303 /* SDU_AppUITests */,
+				141D31882C81CECE00B7D303 /* SDU App */,
+				141D31982C81CECF00B7D303 /* SDU AppTests */,
+				141D31A22C81CECF00B7D303 /* SDU AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -292,8 +300,8 @@
 				141D31942C81CECF00B7D303 /* Preview Assets.xcassets in Resources */,
 				14D2BC392C92A14A00E4CB6D /* sys_w.strings in Resources */,
 				14D2BC342C92A11B00E4CB6D /* Localizable.strings in Resources */,
-				141D31912C81CECF00B7D303 /* Assets.xcassets in Resources */,
 				14D2BC3C2C93E37C00E4CB6D /* courses_details.strings in Resources */,
+				141D31912C81CECF00B7D303 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				141D318D2C81CECE00B7D303 /* SDU_AppApp.swift in Sources */,
+				141D318D2C81CECE00B7D303 /* SDU_App.swift in Sources */,
 				14E104EE2C90BA41001A7F36 /* screen_schedule.swift in Sources */,
 				14E104F32C91B3F5001A7F36 /* screen_courses.swift in Sources */,
 				14E104F52C91B49B001A7F36 /* screen_deadlines.swift in Sources */,
@@ -348,12 +356,12 @@
 /* Begin PBXTargetDependency section */
 		141D319B2C81CECF00B7D303 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 141D31882C81CECE00B7D303 /* SDU_App */;
+			target = 141D31882C81CECE00B7D303 /* SDU App */;
 			targetProxy = 141D319A2C81CECF00B7D303 /* PBXContainerItemProxy */;
 		};
 		141D31A52C81CECF00B7D303 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 141D31882C81CECE00B7D303 /* SDU_App */;
+			target = 141D31882C81CECE00B7D303 /* SDU App */;
 			targetProxy = 141D31A42C81CECF00B7D303 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -362,7 +370,9 @@
 		14D2BC322C92A11B00E4CB6D /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				14D2BC332C92A11B00E4CB6D /* en */,
+				147C9DF72C95257800268345 /* ru */,
+				147C9DF82C9525C000268345 /* en */,
+				147C9E082C9550A600268345 /* kk */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -371,6 +381,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				14D2BC382C92A14A00E4CB6D /* en */,
+				147C9DF02C951C5C00268345 /* ru */,
+				147C9E052C954F5600268345 /* kk */,
 			);
 			name = sys_w.strings;
 			sourceTree = "<group>";
@@ -379,6 +391,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				14D2BC3B2C93E37C00E4CB6D /* en */,
+				147C9DEF2C951C0400268345 /* ru */,
+				147C9E042C954F5100268345 /* kk */,
 			);
 			name = courses_details.strings;
 			sourceTree = "<group>";
@@ -592,7 +606,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SDU_App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SDU_App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SDU App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SDU App";
 			};
 			name = Debug;
 		};
@@ -611,7 +625,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SDU_App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SDU_App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SDU App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SDU App";
 			};
 			name = Release;
 		};
@@ -652,7 +666,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		141D31842C81CECE00B7D303 /* Build configuration list for PBXProject "SDU_App" */ = {
+		141D31842C81CECE00B7D303 /* Build configuration list for PBXProject "SDU App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				141D31AB2C81CECF00B7D303 /* Debug */,
@@ -661,7 +675,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		141D31AD2C81CECF00B7D303 /* Build configuration list for PBXNativeTarget "SDU_App" */ = {
+		141D31AD2C81CECF00B7D303 /* Build configuration list for PBXNativeTarget "SDU App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				141D31AE2C81CECF00B7D303 /* Debug */,
@@ -670,7 +684,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		141D31B02C81CECF00B7D303 /* Build configuration list for PBXNativeTarget "SDU_AppTests" */ = {
+		141D31B02C81CECF00B7D303 /* Build configuration list for PBXNativeTarget "SDU AppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				141D31B12C81CECF00B7D303 /* Debug */,
@@ -679,7 +693,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		141D31B32C81CECF00B7D303 /* Build configuration list for PBXNativeTarget "SDU_AppUITests" */ = {
+		141D31B32C81CECF00B7D303 /* Build configuration list for PBXNativeTarget "SDU AppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				141D31B42C81CECF00B7D303 /* Debug */,

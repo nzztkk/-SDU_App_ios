@@ -5,3 +5,11 @@
   Created by Nurkhat on 12.09.2024.
   
 */
+
+"day_mon" = "Monday";
+"day_tues" = "Tuesday";
+"day_wednes" = "Wednsday";
+"day_thurs" = "Thursday";
+"day_fri" = "Friday";
+"day_satur" = "Saturday";
+"day_sun" = "Sunday";

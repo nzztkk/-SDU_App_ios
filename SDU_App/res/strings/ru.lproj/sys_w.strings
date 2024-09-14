@@ -7,13 +7,12 @@
 */
 
 
-"welcome_message" = "Welcome to the app!";
-"login_button" = "Login";
-"signup_button" = "Sign Up";
+"login_button" = "Войти";
+//"signup_button" = "Нет регистрации";
 
 //Pages
-"schedule_p" = "Schedule";
-"courses_p" = "Courses";
-"deadlines_p" = "Deadlines";
+"schedule_p" = "Расписание";
+"courses_p" = "Курсы";
+"deadlines_p" = "Дедлайны";
 
 

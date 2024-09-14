@@ -6,10 +6,11 @@
   
 */
 
-"day_monday" = "Понедельник";
-"day_tuesday" = "Вторник";
-"day_wednesday" = "Среда";
-"day_thursday" = "Четверг";
-"day_friday" = "Пятница";
-"day_saturday" = "Суббота";
-"day_sunday" = "Воскресенье";
+"day_mon" = "Дүйсенбі";
+"day_tues" = "Сейсенбі";
+"day_wednes" = "Сәрсенбі";
+"day_thurs" = "Бейсенбі";
+"day_fri" = "Жұма";
+"day_satur" = "Сенбі";
+"day_sun" = "Жексенбі";
+

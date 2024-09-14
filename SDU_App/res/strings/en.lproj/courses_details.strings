@@ -1,4 +1,4 @@
-/* 
+/*
   courses_details.strings
   SDU_App
 
@@ -19,22 +19,22 @@
 
 // COURSES FULL NAME
 
-"c_name_mde_151" = "Модуль социально-политических знаний (Политология)";
-"c_name_css_410" = "Методы исследования и инструменты";
-"c_name_css_312" = "Компьютерные сети 1";
-"c_name_inf_405" = "Саморазвитие в области компьютерных наук";
-"c_name_inf_228" = "UX/UI дизайн";
-"c_name_css_319" = "Тестирование и валидация программного обеспечения";
+"c_name_mde_151" = "Module of Social and Political Knowledge (Political Science)";
+"c_name_css_410" = "Research tools and methods";
+"c_name_css_312" = "Computer Networks 1";
+"c_name_inf_405" = "Personal Development in Computer Science";
+"c_name_inf_228" = "UX/UI design";
+"c_name_css_319" = "Software Testing and Validation";
 
 //COURSES TEACHERS NAME
 
-"c_teacher_name_mde_151" = "Еркебұлан Ақбердиев";
-"c_teacher_name_css_410" = "Жуманияз Маматнабиев";
-"c_teacher_name_css_312_l" = "Бауыржан Берліқожа";
-"c_teacher_name_css_312_p" = "Нұрбол Молдабай";
-"c_teacher_name_inf_405" = "Алина Беделханова";
-"c_teacher_name_inf_228" = "Али Байгеленов";
-"c_teacher_name_css_319" = "Назым Тұрысбек";
+"c_teacher_name_mde_151" = "Yerkebulan Akberdiyev";
+"c_teacher_name_css_410" = "Zhumaniyaz Mamatnabiyev";
+"c_teacher_name_css_312_l" = "Bauyrzhan Berlikozha";
+"c_teacher_name_css_312_p" = "Nurbol Moldabay";
+"c_teacher_name_inf_405" = "Alina Bedelkhanova";
+"c_teacher_name_inf_228" = "Ali Baigelenov";
+"c_teacher_name_css_319" = "Nazym Turysbek";
 
 // CLASSROOMS
 
@@ -101,6 +101,4 @@
 "ct_12_end" = "20:20";
 "ct_13_end" = "21:20";
 "ct_14_end" = "22:20";
-
-
 
