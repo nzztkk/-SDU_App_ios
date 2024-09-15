@@ -6,6 +6,12 @@
   
 */
 
+//COURSES TYPE
+
+"type_lecture" = "Lecture";
+"type_practice" = "Practice";
+"type_lab_work" = "Lab. work";
+
 // COURSES CODES
 
 "c_code_mde_151" = "MDE 151";

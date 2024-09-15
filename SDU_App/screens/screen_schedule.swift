@@ -61,41 +61,61 @@ struct SchedulePage: View {
             }
             allCourses.append(contentsOf: dayCourses)
         }
+        
+        /*
+         "type_lecture" = "Лекция";
+         "type_practice" = "Практика";
+         "type_lab_work" = "Лаб. работа";
+         */
 
         // Курсы для каждого дня
         coursesForDay("day_mon", [
-            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_mde_151", locationKey: "cr_a1", typeKey: "Лекция", professorKey: "c_teacher_name_mde_151"),
-            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_css_410", locationKey: "cr_a2", typeKey: "Лекция", professorKey: "c_teacher_name_css_410"),
-            (timeStartKey: "ct_4_start", timeEndKey: "ct_4_end", titleKey: "c_name_css_410", locationKey: "cr_a2", typeKey: "Лекция", professorKey: "c_teacher_name_css_410"),
-            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_css_410", locationKey: "cr_a3", typeKey: "Практика", professorKey: "c_teacher_name_css_410")
+            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_mde_151", locationKey: "cr_a1", typeKey: "type_lecture", professorKey: "c_teacher_name_mde_151"),
+            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_css_410", locationKey: "cr_a2", typeKey: "type_lecture", professorKey: "c_teacher_name_css_410"),
+            (timeStartKey: "ct_4_start", timeEndKey: "ct_4_end", titleKey: "c_name_css_410", locationKey: "cr_a2", typeKey: "type_lecture", professorKey: "c_teacher_name_css_410"),
+            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_css_410", locationKey: "cr_a3", typeKey: "type_practice", professorKey: "c_teacher_name_css_410")
         ])
 
         coursesForDay("day_tues", [
-            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_css_312", locationKey: "cr_e1", typeKey: "Лекция", professorKey: "c_teacher_name_css_312_l")
+            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_css_312", locationKey: "cr_e1", typeKey: "type_lecture", professorKey: "c_teacher_name_css_312_l")
         ])
 
         coursesForDay("day_wednes", [
-            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_inf_405", locationKey: "cr_a1", typeKey: "Лекция", professorKey: "c_teacher_name_inf_405"),
-            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_inf_405", locationKey: "cr_a1", typeKey: "Лекция", professorKey: "c_teacher_name_inf_405"),
-            (timeStartKey: "ct_10_start", timeEndKey: "ct_10_end", titleKey: "c_name_inf_405", locationKey: "cr_a1", typeKey: "Лекция", professorKey: "c_teacher_name_inf_405")
+            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_inf_405", locationKey: "cr_a1", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405"),
+            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_inf_405", locationKey: "cr_a1", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405"),
+            (timeStartKey: "ct_10_start", timeEndKey: "ct_10_end", titleKey: "c_name_inf_405", locationKey: "cr_a1", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405")
         ])
 
         coursesForDay("day_thurs", [
-            (timeStartKey: "ct_5_start", timeEndKey: "ct_5_end", titleKey: "c_name_inf_228", locationKey: "cr_b2", typeKey: "Лекция", professorKey: "c_teacher_name_inf_228"),
-            (timeStartKey: "ct_6_start", timeEndKey: "ct_6_end", titleKey: "c_name_inf_228", locationKey: "cr_b2", typeKey: "Лекция", professorKey: "c_teacher_name_inf_228")
+            (timeStartKey: "ct_5_start", timeEndKey: "ct_5_end", titleKey: "c_name_inf_228", locationKey: "cr_b2", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_228"),
+            (timeStartKey: "ct_6_start", timeEndKey: "ct_6_end", titleKey: "c_name_inf_228", locationKey: "cr_b2", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_228")
         ])
 
         coursesForDay("day_fri", [
-            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_312", locationKey: "cr_f1", typeKey: "Практика", professorKey: "c_teacher_name_css_312_p"),
-            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_312", locationKey: "cr_f1", typeKey: "Практика", professorKey: "c_teacher_name_css_312_p"),
-            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_inf_228", locationKey: "cr_g1", typeKey: "Практика", professorKey: "c_teacher_name_inf_228")
+            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_312", locationKey: "cr_f1", typeKey: "type_practice", professorKey: "c_teacher_name_css_312_p"),
+            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_312", locationKey: "cr_f1", typeKey: "type_practice", professorKey: "c_teacher_name_css_312_p"),
+            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_inf_228", locationKey: "cr_g1", typeKey: "type_practice", professorKey: "c_teacher_name_inf_228")
         ])
 
         coursesForDay("day_satur", [
-            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "Лекция", professorKey: "c_teacher_name_css_319"),
-            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "Лекция", professorKey: "c_teacher_name_css_319"),
-            (timeStartKey: "ct_7_start", timeEndKey: "ct_7_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "Практика", professorKey: "c_teacher_name_css_319")
+            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "type_lecture", professorKey: "c_teacher_name_css_319"),
+            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "type_lecture", professorKey: "c_teacher_name_css_319"),
+            (timeStartKey: "ct_7_start", timeEndKey: "ct_7_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "type_practice", professorKey: "c_teacher_name_css_319")
         ])
+        
+        //test day
+        /*
+       coursesForDay("day_sun", [
+            (timeStartKey: "test_time1", timeEndKey: "ct_1_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "Лекция", professorKey: "c_teacher_name_css_319"),
+            
+            
+        ])
+        
+        coursesForDay("day_tues", [
+             (timeStartKey: "test_time1", timeEndKey: "ct_1_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "Лекция", professorKey: "c_teacher_name_css_319"),
+             
+             
+         ])*/
 
         return allCourses
     }
@@ -120,6 +140,8 @@ struct SchedulePage: View {
         }
         .navigationTitle("Расписание".lc)
     }
+    
+    
 
     // Определение дня недели и отображение расписания, начиная с текущего дня
     func filteredDaysOfWeek() -> [String] {
@@ -173,6 +195,7 @@ struct DaySection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
+            // Кнопка для сворачивания/разворачивания секции
             Button(action: toggleExpanded) {
                 HStack {
                     Text(day)
@@ -185,9 +208,11 @@ struct DaySection: View {
                 .padding(.vertical, 8)
             }
 
+            // Список курсов, если секция развернута
             if isExpanded {
-                ForEach(courses, id: \.time) { course in
-                    CourseItem(course: course)
+                ForEach(Array(courses.enumerated()), id: \.element.time) { index, course in
+                    // Вызов CourseItem с номером курса (index + 1)
+                    CourseItem(course: course, number: index + 1)
                         .transition(.opacity.combined(with: .slide))
                 }
             }
@@ -195,33 +220,86 @@ struct DaySection: View {
     }
 }
 
+func getCourseTypeColor(type: String) -> Color {
+    switch type {
+    case "type_lecture".lc:
+        return .orange
+    case "type_practice".lc:
+        return .green
+    case "type_lab_work".lc:
+        return .gray
+    default:
+        return .gray
+    }
+}
+
 struct CourseItem: View {
     var course: Course
+    var number: Int // Порядковый номер курса
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: 8) {
+            // Горизонтальный контейнер с порядковым номером, временем и типом занятия
             HStack {
+                // Порядковый номер прижат к левой стенке с фоном, который исходит из левой стены
+                Text("\(number)")
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                    .frame(width: 45, height: 25)
+                    .background(Color(hex: "5F7ADB"))
+                    .cornerRadius(10, corners: [.topRight, .bottomRight]) // Округление только справа
+                    .padding(.leading, -40)
+                
+                // Тип занятия (лекция или практика)
+                Text(course.type.lc)
+                    .font(.subheadline)
+                    .bold()
+                    //.frame(width: 110, height: 25)
+                    //.background(Color(hex: "5F7ADB"))
+                    .foregroundColor(getCourseTypeColor(type: course.type))
+                    .cornerRadius(10, corners: [.topRight, .bottomRight]) // Округление только справа
+                    
+                
+                Spacer()
+                
+                // Время занятия
                 Text(course.time)
                     .font(.subheadline)
+                    .bold()
                     .foregroundColor(.gray)
-                Spacer()
-                Text(course.type)
-                    .font(.subheadline)
-                    .foregroundColor(course.type == "Лекция".lc ? .blue : .green)
             }
-            Text(course.title)
-                .font(.body)
-                .foregroundColor(.primary)
-            Text(course.professor)
-                .font(.footnote)
-                .foregroundColor(.secondary)
-            Text(course.location)
-                .font(.footnote)
-                .foregroundColor(.gray)
+            .padding(.vertical, 8)
+            
+            // Основная информация о курсе
+            VStack(alignment: .leading, spacing: 4) {
+                Text(course.title)
+                    .font(.body)
+                    .foregroundColor(.primary)
+                
+                // Аудитория и преподаватель
+                HStack {
+                    Image(systemName: "door.left.hand.closed")
+                        .foregroundColor(.gray)
+                    Text(": \(course.location)")
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                    Spacer()
+                }
+                
+                HStack {
+                    Image(systemName: "person.fill")
+                        .foregroundColor(.gray)
+                    Text(": \(course.professor)")
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                    Spacer()
+                }
+            }
         }
-        .padding()
-        .background(Color(.systemGray6))
-        .cornerRadius(10)
+        .padding(.horizontal)
+        
+        // Горизонтальная линия в качестве разделителя
+        Divider()
     }
 }
 

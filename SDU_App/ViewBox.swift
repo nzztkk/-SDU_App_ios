@@ -10,33 +10,38 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            
-            
-            
-            SchedulePage()
-                .tabItem {
-                    Label("Schedule", systemImage: "graduationcap.fill")
-                }
+        NavigationView {
+            TabView {
+                SchedulePage()
+                    .tabItem {
+                        Label("Schedule", systemImage: "graduationcap.fill")
+                    }
 
-            CoursesPage()
-                .tabItem {
-                    Label("Courses", systemImage: "square.and.pencil")
+                CoursesPage()
+                    .tabItem {
+                        Label("Courses", systemImage: "square.and.pencil")
+                    }
+                
+                DeadlinesPage()
+                    .tabItem {
+                        Label("Deadlines", systemImage: "flame.fill")
+                    }
+            }
+            .navigationBarTitle("Расписание", displayMode: .inline)
+            .toolbar {
+                // Добавляем кнопку справа
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        print("Кнопка нажата")
+                    }) {
+                        Image(systemName: "calendar")
+                    }
                 }
-            
-            DeadlinesPage()
-                .tabItem {
-                    Label("Deadlines", systemImage: "flame.fill")
-                }
-            
+            }
         }
     }
 }
 
-
-
 #Preview {
     ContentView()
 }
-
-
