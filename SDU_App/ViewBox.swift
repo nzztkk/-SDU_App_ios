@@ -11,32 +11,56 @@ struct ContentView: View {
     @State private var currentWeek: Int = 1 // Текущая неделя
 
     var body: some View {
-        NavigationView {
-            VStack {
-                // Добавляем отдельный компонент для выбора недель
-                WeekSelectorView(currentWeek: $currentWeek)
-                
-                // Основной экран с расписанием
-                SchedulePage()
-                    .padding(.top, 10)
-                    .navigationBarTitle("Расписание", displayMode: .inline)
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button(action: {
-                                print("Кнопка нажата")
-                            }) {
-                                Image(systemName: "calendar")
-                            }
+        TabView {
+            // Экран с расписанием
+            NavigationView {
+                VStack {
+                    // Добавляем отдельный компонент для выбора недель
+                    WeekSelectorView(currentWeek: $currentWeek)
+                    
+                    // Основной экран с расписанием
+                    SchedulePage()
+                        .padding(.top, 10)
+                }
+                .navigationBarTitle("Расписание", displayMode: .inline) // Надпись Расписание сверху
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            print("Кнопка нажата")
+                        }) {
+                            Image(systemName: "calendar")
                         }
                     }
+                }
             }
-            .onAppear {
-                // Определяем текущую неделю при появлении экрана
-                currentWeek = getCurrentWeek()
+            .tabItem {
+                Label("Schedule", systemImage: "graduationcap.fill")
+            }
+
+            // Страница курсов
+            NavigationView {
+                CoursesPage()
+                    .navigationBarTitle("Курсы", displayMode: .inline)
+            }
+            .tabItem {
+                Label("Courses", systemImage: "square.and.pencil")
+            }
+
+            // Страница дедлайнов
+            NavigationView {
+                DeadlinesPage()
+                    .navigationBarTitle("Дедлайны", displayMode: .inline)
+            }
+            .tabItem {
+                Label("Deadlines", systemImage: "flame.fill")
             }
         }
+        .onAppear {
+            // Определяем текущую неделю при появлении экрана
+            currentWeek = getCurrentWeek()
+        }
     }
-    
+
     // Определение текущей недели на основе сегодняшней даты
     func getCurrentWeek() -> Int {
         let calendar = Calendar.current
