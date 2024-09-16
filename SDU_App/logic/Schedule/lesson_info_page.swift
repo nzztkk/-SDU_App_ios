@@ -8,16 +8,6 @@
 import Foundation
 import SwiftUI
 
-//
-//  lesson_info_page.swift
-//  SDU App
-//
-//  Created by Nurkhat on 17.09.2024.
-//
-
-import Foundation
-import SwiftUI
-
 struct LessonInfoPage: View {
     var course: Course // Передаем объект курса
 
@@ -28,7 +18,10 @@ struct LessonInfoPage: View {
             Text(course.title)
                 .font(.title)
                 .bold()
-            
+                .lineLimit(3) // Ограничиваем текст заголовка 3 строками
+                .minimumScaleFactor(0.7) // Минимальный масштаб шрифта до 70% от исходного
+                .frame(maxWidth: .infinity, alignment: .leading) // Тянем текст на всю ширину
+
             HStack {
                 Image(systemName: "clock")
                     .foregroundColor(.gray)
@@ -77,8 +70,6 @@ struct LessonInfoPage: View {
             Spacer()
         }
         .padding()
-        .navigationTitle("lesson_info_p".syswords)
+        .navigationTitle("Информация о паре")
     }
 }
-
-
