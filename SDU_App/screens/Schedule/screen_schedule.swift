@@ -190,7 +190,11 @@ struct DaySection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             // Кнопка для сворачивания/разворачивания секции
-            Button(action: toggleExpanded) {
+            Button(action: {
+                withAnimation(.easeInOut(duration: 0.5)) { // Применяем анимацию при нажатии
+                    toggleExpanded()
+                }
+            }) {
                 HStack {
                     Text(day)
                         .font(.headline)
@@ -207,13 +211,13 @@ struct DaySection: View {
                 ForEach(Array(courses.enumerated()), id: \.element.time) { index, course in
                     // Вызов CourseItem с номером курса (index + 1)
                     CourseItem(course: course, number: index + 1)
-                        .transition(.opacity.combined(with: .slide))
+                        .transition(.waterfallTransition) // Используем анимацию "водопад"
                 }
             }
         }
+        .animation(.easeInOut(duration: 0.5), value: isExpanded) // Привязываем анимацию к значению isExpanded
     }
 }
-
 func getCourseTypeColor(type: String) -> Color {
     switch type {
     case "type_lecture".lc:

@@ -23,6 +23,8 @@
 		147C9E1C2C974ECA00268345 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E1B2C974ECA00268345 /* Geometry.swift */; };
 		147C9E1E2C975FF700268345 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E1D2C975FF700268345 /* WeekView.swift */; };
 		147C9E202C976C0500268345 /* StringCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E1F2C976C0500268345 /* StringCalls.swift */; };
+		147C9E242C98B42400268345 /* schedule_view_logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E232C98B42400268345 /* schedule_view_logic.swift */; };
+		147C9E272C98B50A00268345 /* waterfall_animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E262C98B50A00268345 /* waterfall_animation.swift */; };
 		14D2BC342C92A11B00E4CB6D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D2BC322C92A11B00E4CB6D /* Localizable.strings */; };
 		14D2BC392C92A14A00E4CB6D /* sys_w.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D2BC372C92A14A00E4CB6D /* sys_w.strings */; };
 		14D2BC3C2C93E37C00E4CB6D /* courses_details.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D2BC3A2C93E37C00E4CB6D /* courses_details.strings */; };
@@ -71,6 +73,8 @@
 		147C9E1B2C974ECA00268345 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		147C9E1D2C975FF700268345 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		147C9E1F2C976C0500268345 /* StringCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalls.swift; sourceTree = "<group>"; };
+		147C9E232C98B42400268345 /* schedule_view_logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = schedule_view_logic.swift; sourceTree = "<group>"; };
+		147C9E262C98B50A00268345 /* waterfall_animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waterfall_animation.swift; sourceTree = "<group>"; };
 		14D2BC382C92A14A00E4CB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/sys_w.strings; sourceTree = "<group>"; };
 		14D2BC3B2C93E37C00E4CB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/courses_details.strings; sourceTree = "<group>"; };
 		14E104ED2C90BA41001A7F36 /* screen_schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screen_schedule.swift; sourceTree = "<group>"; };
@@ -186,6 +190,30 @@
 			path = Geometry;
 			sourceTree = "<group>";
 		};
+		147C9E212C98B3E400268345 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				14E104ED2C90BA41001A7F36 /* screen_schedule.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		147C9E222C98B40400268345 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				147C9E232C98B42400268345 /* schedule_view_logic.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		147C9E252C98B4E300268345 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				147C9E262C98B50A00268345 /* waterfall_animation.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 		14D2BC352C92A12200E4CB6D /* languages */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,7 +235,7 @@
 		14E104EB2C90795C001A7F36 /* screens */ = {
 			isa = PBXGroup;
 			children = (
-				14E104ED2C90BA41001A7F36 /* screen_schedule.swift */,
+				147C9E212C98B3E400268345 /* Schedule */,
 				14E104F22C91B3F5001A7F36 /* screen_courses.swift */,
 				14E104F42C91B49B001A7F36 /* screen_deadlines.swift */,
 			);
@@ -228,6 +256,8 @@
 		14E104EF2C90FD89001A7F36 /* logic */ = {
 			isa = PBXGroup;
 			children = (
+				147C9E252C98B4E300268345 /* Animation */,
+				147C9E222C98B40400268345 /* Schedule */,
 			);
 			path = logic;
 			sourceTree = "<group>";
@@ -380,9 +410,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				147C9E1E2C975FF700268345 /* WeekView.swift in Sources */,
+				147C9E272C98B50A00268345 /* waterfall_animation.swift in Sources */,
 				141D318D2C81CECE00B7D303 /* SDU_App.swift in Sources */,
 				147C9E1C2C974ECA00268345 /* Geometry.swift in Sources */,
 				147C9E202C976C0500268345 /* StringCalls.swift in Sources */,
+				147C9E242C98B42400268345 /* schedule_view_logic.swift in Sources */,
 				14E104EE2C90BA41001A7F36 /* screen_schedule.swift in Sources */,
 				14E104F32C91B3F5001A7F36 /* screen_courses.swift in Sources */,
 				14E104F52C91B49B001A7F36 /* screen_deadlines.swift in Sources */,
