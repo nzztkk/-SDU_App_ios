@@ -32,6 +32,7 @@ struct SDU_App: App {
                     // Запрашиваем разрешение на уведомления
                     requestNotificationPermission()
                     
+                    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                     
                     
                     // Полное расписание курсов
@@ -150,6 +151,8 @@ struct SDU_App: App {
                         
                     ]
                     
+                    
+                    
                     setupNotifications(for: schedule)
                     
                    
@@ -211,12 +214,13 @@ struct SDU_App: App {
             content.body = "Начало в \(course.startTime) в кабинете \(course.location)"
             content.sound = .default
             
-            // Устанавливаем время уведомления за 15 минут до начала занятия
             let triggerDate = Calendar.current.date(byAdding: .minute, value: -15, to: date)!
             let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: triggerDate)
             let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
             
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            // Уникальный идентификатор для каждого курса
+            let requestIdentifier = "\(course.name)_\(course.startTime)"
+            let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request) { error in
                 if let error = error {

@@ -130,7 +130,7 @@ struct SchedulePage: View {
             }
             .padding()
         }
-        .navigationTitle("Расписание".lc)
+        .navigationTitle("schedule_p".syswords)
     }
     
     
