@@ -18,6 +18,6 @@ struct CoursesPage: View {
                 .padding()
 
         }
-        .navigationTitle("Settings")
+        
     }
 }

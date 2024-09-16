@@ -19,6 +19,6 @@ struct DeadlinesPage: View {
 
             
         }
-        .navigationTitle("Home")
+        
     }
 }

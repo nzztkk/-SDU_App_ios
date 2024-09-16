@@ -22,7 +22,7 @@ struct ContentView: View {
                     SchedulePage()
                         .padding(.top, 10)
                 }
-                .navigationBarTitle("Расписание", displayMode: .inline) // Надпись Расписание сверху
+                .navigationBarTitle("schedule_p".syswords, displayMode: .inline) // Надпись Расписание сверху
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
@@ -34,25 +34,25 @@ struct ContentView: View {
                 }
             }
             .tabItem {
-                Label("Schedule", systemImage: "graduationcap.fill")
+                Label("schedule_p".syswords, systemImage: "graduationcap.fill")
             }
 
             // Страница курсов
             NavigationView {
                 CoursesPage()
-                    .navigationBarTitle("Курсы", displayMode: .inline)
+                    .navigationBarTitle("courses_p".syswords, displayMode: .inline)
             }
             .tabItem {
-                Label("Courses", systemImage: "square.and.pencil")
+                Label("courses_p".syswords, systemImage: "square.and.pencil")
             }
 
             // Страница дедлайнов
             NavigationView {
                 DeadlinesPage()
-                    .navigationBarTitle("Дедлайны", displayMode: .inline)
+                    .navigationBarTitle("deadlines_p".syswords, displayMode: .inline)
             }
             .tabItem {
-                Label("Deadlines", systemImage: "flame.fill")
+                Label("deadlines_p".syswords, systemImage: "flame.fill")
             }
         }
         .onAppear {

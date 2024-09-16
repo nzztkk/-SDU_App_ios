@@ -21,15 +21,7 @@ struct Course {
 
 
 
-extension String {
-    var lc: String {
-        return NSLocalizedString(self, tableName: "courses_details", bundle: .main, value: "", comment: "")
-    }
-    
-    var weeks: String {
-        return NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: "", comment: "")
-    }
-}
+
 
 struct SchedulePage: View {
     @State private var expandedDays: Set<String> = [] // Хранение информации о развернутых днях
