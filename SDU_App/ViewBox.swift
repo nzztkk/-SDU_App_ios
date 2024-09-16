@@ -55,25 +55,10 @@ struct ContentView: View {
                 Label("deadlines_p".syswords, systemImage: "flame.fill")
             }
         }
-        .onAppear {
-            // Определяем текущую неделю при появлении экрана
-            currentWeek = getCurrentWeek()
-        }
+        
     }
 
-    // Определение текущей недели на основе сегодняшней даты
-    func getCurrentWeek() -> Int {
-        let calendar = Calendar.current
-        let today = Date()
-        
-        // Начало семестра (например, 1 сентября)
-        let semesterStartDate = calendar.date(from: DateComponents(year: 2024, month: 9, day: 1))!
-        
-        let components = calendar.dateComponents([.weekOfYear], from: semesterStartDate, to: today)
-        let weekNumber = components.weekOfYear ?? 1
-        
-        return min(max(weekNumber, 1), 15) // Убедимся, что результат в пределах от 1 до 15
-    }
+    
 }
 
 #Preview {

@@ -7,13 +7,15 @@
 */
 
 
-"welcome_message" = "Welcome to the app!";
 "login_button" = "Login";
-"signup_button" = "Sign Up";
+//"signup_button" = "Sign Up";
 
 //Pages
 "schedule_p" = "Кесте";
 "courses_p" = "Курстар";
 "deadlines_p" = "Мерзімі";
+
+"lesson_info_p" = "Сабақтың толық ақпараты";
+
 
 

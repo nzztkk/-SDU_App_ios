@@ -14,9 +14,11 @@ struct Course {
     var day: String
     var time: String
     var title: String
+    //var course_code: String // Код курса
     var location: String
     var type: String
     var professor: String
+    var onlineLink: String? // Ссылка на онлайн урок
 }
 
 
@@ -39,7 +41,7 @@ struct SchedulePage: View {
         var allCourses: [Course] = []
 
         // Функция для создания курсов для конкретного дня
-        func coursesForDay(_ dayKey: String, _ courseData: [(timeStartKey: String, timeEndKey: String, titleKey: String, locationKey: String, typeKey: String, professorKey: String)]) {
+        func coursesForDay(_ dayKey: String, _ courseData: [(timeStartKey: String, timeEndKey: String, titleKey: String, locationKey: String, typeKey: String, professorKey: String, onlineLinkKey: String?)]) {
             let day = dayKey.weeks
             let dayCourses = courseData.map { data in
                 Course(
@@ -48,7 +50,8 @@ struct SchedulePage: View {
                     title: data.titleKey.lc,
                     location: data.locationKey.lc,
                     type: data.typeKey.lc,
-                    professor: data.professorKey.lc
+                    professor: data.professorKey.lc,
+                    onlineLink: data.onlineLinkKey?.lc // Присваиваем ссылку на онлайн-урок
                 )
             }
             allCourses.append(contentsOf: dayCourses)
@@ -64,37 +67,37 @@ struct SchedulePage: View {
 
         // Курсы для каждого дня
         coursesForDay("day_mon", [
-            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_mde_151", locationKey: "(Virtual Room 96) VR 96", typeKey: "type_lecture", professorKey: "c_teacher_name_mde_151"),
-            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_css_410", locationKey: "(Virtual Room 53) VR 53", typeKey: "type_lecture", professorKey: "c_teacher_name_css_410"),
-            (timeStartKey: "ct_4_start", timeEndKey: "ct_4_end", titleKey: "c_name_css_410", locationKey: "(Virtual Room 53) VR 53", typeKey: "type_lecture", professorKey: "c_teacher_name_css_410"),
-            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_css_410", locationKey: "(Virtual Room 1) VR 1", typeKey: "type_practice", professorKey: "c_teacher_name_css_410")
+            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_mde_151", locationKey: "(Virtual Room 96) VR 96", typeKey: "type_lecture", professorKey: "c_teacher_name_mde_151", onlineLinkKey: "https://onlinesdu.webex.com/meet/yerkebulan.akberdiyev"),
+            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_css_410", locationKey: "(Virtual Room 53) VR 53", typeKey: "type_lecture", professorKey: "c_teacher_name_css_410", onlineLinkKey: "https://onlinesdu.webex.com/meet/zhumaniyaz.mamatnabiyev"),
+            (timeStartKey: "ct_4_start", timeEndKey: "ct_4_end", titleKey: "c_name_css_410", locationKey: "(Virtual Room 53) VR 53", typeKey: "type_lecture", professorKey: "c_teacher_name_css_410", onlineLinkKey: "https://onlinesdu.webex.com/meet/zhumaniyaz.mamatnabiyev"),
+            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_css_410", locationKey: "(Virtual Room 1) VR 1", typeKey: "type_practice", professorKey: "c_teacher_name_css_410", onlineLinkKey: "https://onlinesdu.webex.com/meet/zhumaniyaz.mamatnabiyev")
         ])
 
         coursesForDay("day_tues", [
-            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_css_312", locationKey: "(L.T. D2) E221", typeKey: "type_lecture", professorKey: "c_teacher_name_css_312_l")
+            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_css_312", locationKey: "(L.T. D2) E221", typeKey: "type_lecture", professorKey: "c_teacher_name_css_312_l", onlineLinkKey: nil)
         ])
 
         coursesForDay("day_wednes", [
-            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_inf_405", locationKey: "(Virtual Room 2) VR 2", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405"),
-            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_inf_405", locationKey: "(Virtual Room 2) VR 2", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405"),
-            (timeStartKey: "ct_10_start", timeEndKey: "ct_10_end", titleKey: "c_name_inf_405", locationKey: "(Virtual Room 2) VR 2", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405")
+            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_inf_405", locationKey: "(Virtual Room 2) VR 2", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405", onlineLinkKey: "https://onlinesdu.webex.com/meet/alina.bedelkhanova"),
+            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_inf_405", locationKey: "(Virtual Room 2) VR 2", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405", onlineLinkKey: "https://onlinesdu.webex.com/meet/alina.bedelkhanova"),
+            (timeStartKey: "ct_10_start", timeEndKey: "ct_10_end", titleKey: "c_name_inf_405", locationKey: "(Virtual Room 2) VR 2", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405", onlineLinkKey: "https://onlinesdu.webex.com/meet/alina.bedelkhanova")
         ])
 
         coursesForDay("day_thurs", [
-            (timeStartKey: "ct_5_start", timeEndKey: "ct_5_end", titleKey: "c_name_inf_228", locationKey: "(SDU Life 202) SL 1", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_228"),
-            (timeStartKey: "ct_6_start", timeEndKey: "ct_6_end", titleKey: "c_name_inf_228", locationKey: "(SDU Life 202) SL 1", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_228")
+            (timeStartKey: "ct_5_start", timeEndKey: "ct_5_end", titleKey: "c_name_inf_228", locationKey: "(SDU Life 202) SL 1", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_228", onlineLinkKey: nil),
+            (timeStartKey: "ct_6_start", timeEndKey: "ct_6_end", titleKey: "c_name_inf_228", locationKey: "(SDU Life 202) SL 1", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_228", onlineLinkKey: nil)
         ])
 
         coursesForDay("day_fri", [
-            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_312", locationKey: "(ENG 103) F103", typeKey: "type_practice", professorKey: "c_teacher_name_css_312_p"),
-            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_312", locationKey: "(ENG 103) F103", typeKey: "type_practice", professorKey: "c_teacher_name_css_312_p"),
-            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_inf_228", locationKey: "(LAB-ECO1) G108", typeKey: "type_practice", professorKey: "c_teacher_name_inf_228")
+            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_312", locationKey: "(ENG 103) F103", typeKey: "type_practice", professorKey: "c_teacher_name_css_312_p", onlineLinkKey: nil),
+            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_312", locationKey: "(ENG 103) F103", typeKey: "type_practice", professorKey: "c_teacher_name_css_312_p", onlineLinkKey: nil),
+            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_inf_228", locationKey: "(LAB-ECO1) G108", typeKey: "type_practice", professorKey: "c_teacher_name_inf_228", onlineLinkKey: nil)
         ])
 
         coursesForDay("day_satur", [
-            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_319", locationKey: "(Virtual Room 33) VR 33", typeKey: "type_lecture", professorKey: "c_teacher_name_css_319"),
-            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_319", locationKey: "(Virtual Room 33) VR 33", typeKey: "type_lecture", professorKey: "c_teacher_name_css_319"),
-            (timeStartKey: "ct_7_start", timeEndKey: "ct_7_end", titleKey: "c_name_css_319", locationKey: "(Virtual Room 33) VR 33", typeKey: "type_practice", professorKey: "c_teacher_name_css_319")
+            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_319", locationKey: "(Virtual Room 33) VR 33", typeKey: "type_lecture", professorKey: "c_teacher_name_css_319", onlineLinkKey: "https://onlinesdu.webex.com/meet/nazym.turysbek"),
+            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_319", locationKey: "(Virtual Room 33) VR 33", typeKey: "type_lecture", professorKey: "c_teacher_name_css_319", onlineLinkKey: "https://onlinesdu.webex.com/meet/nazym.turysbek"),
+            (timeStartKey: "ct_7_start", timeEndKey: "ct_7_end", titleKey: "c_name_css_319", locationKey: "(Virtual Room 33) VR 33", typeKey: "type_practice", professorKey: "c_teacher_name_css_319", onlineLinkKey: "https://onlinesdu.webex.com/meet/nazym.turysbek")
         ])
         
         //test day
@@ -191,16 +194,16 @@ struct DaySection: View {
         VStack(alignment: .leading, spacing: 16) {
             // Кнопка для сворачивания/разворачивания секции
             Button(action: {
-                withAnimation(.easeInOut(duration: 0.5)) { // Применяем анимацию при нажатии
+                withAnimation(.easeInOut(duration: 0.5)) {
                     toggleExpanded()
                 }
             }) {
                 HStack {
                     Text(day)
-                        .font(.headline)
+                        .font(.title3)
                         .foregroundColor(.primary)
                     Spacer()
-                    Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                    Image(systemName: isExpanded ? "chevron.up.circle.fill" : "chevron.down.circle.fill")
                         .foregroundColor(.blue)
                 }
                 .padding(.vertical, 8)
@@ -209,15 +212,17 @@ struct DaySection: View {
             // Список курсов, если секция развернута
             if isExpanded {
                 ForEach(Array(courses.enumerated()), id: \.element.time) { index, course in
-                    // Вызов CourseItem с номером курса (index + 1)
-                    CourseItem(course: course, number: index + 1)
-                        .transition(.waterfallTransition) // Используем анимацию "водопад"
+                    // Используем NavigationLink для перехода на страницу дополнительной информации о курсе
+                    NavigationLink(destination: LessonInfoPage(course: course)) {
+                        CourseItem(course: course, number: index + 1)
+                    }
                 }
             }
         }
-        .animation(.easeInOut(duration: 0.5), value: isExpanded) // Привязываем анимацию к значению isExpanded
     }
 }
+
+
 func getCourseTypeColor(type: String) -> Color {
     switch type {
     case "type_lecture".lc:
@@ -238,7 +243,7 @@ struct CourseItem: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             // Горизонтальный контейнер с порядковым номером, временем и типом занятия
-            HStack {
+            HStack(alignment: .center) {
                 // Порядковый номер прижат к левой стенке с фоном, который исходит из левой стены
                 Text("\(number)")
                     .font(.subheadline)
@@ -246,17 +251,13 @@ struct CourseItem: View {
                     .frame(width: 45, height: 25)
                     .background(Color(hex: "5F7ADB"))
                     .cornerRadius(10, corners: [.topRight, .bottomRight]) // Округление только справа
-                    .padding(.leading, -40)
+                    .padding(.leading, -40) // Сохраняем запланированный отрицательный отступ
                 
                 // Тип занятия (лекция или практика)
                 Text(course.type.lc)
                     .font(.subheadline)
                     .bold()
-                    //.frame(width: 110, height: 25)
-                    //.background(Color(hex: "5F7ADB"))
                     .foregroundColor(getCourseTypeColor(type: course.type))
-                    .cornerRadius(10, corners: [.topRight, .bottomRight]) // Округление только справа
-                    
                 
                 Spacer()
                 
@@ -266,42 +267,48 @@ struct CourseItem: View {
                     .bold()
                     .foregroundColor(.gray)
             }
-            .padding(.vertical, 8)
+            .frame(maxWidth: .infinity, alignment: .leading) // Выравнивание по левому краю
             
             // Основная информация о курсе
             VStack(alignment: .leading, spacing: 4) {
+                // Название курса, допускаем перенос текста на несколько строк
                 Text(course.title)
                     .font(.body)
                     .foregroundColor(.primary)
+                    .lineLimit(nil) // Разрешаем несколько строк
+                    .multilineTextAlignment(.leading) // Выравнивание по левому краю
+                    .frame(maxWidth: .infinity, alignment: .leading) // Убираем отступы слева
                 
                 // Аудитория и преподаватель
-                HStack {
+                HStack(alignment: .center) {
                     Image(systemName: "door.left.hand.closed")
                         .foregroundColor(.gray)
                     Text(": \(course.location)")
                         .font(.footnote)
                         .foregroundColor(.gray)
+                    
                     Spacer()
                 }
                 
-                HStack {
+                HStack(alignment: .center) {
                     Image(systemName: "person.fill")
                         .foregroundColor(.gray)
                     Text(": \(course.professor)")
                         .font(.footnote)
                         .foregroundColor(.gray)
+                    
                     Spacer()
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(.horizontal)
         
         // Горизонтальная линия в качестве разделителя
         Divider()
+            .background(.primary)
     }
 }
-
-
 
 
 #Preview {
