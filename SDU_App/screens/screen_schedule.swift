@@ -59,40 +59,42 @@ struct SchedulePage: View {
          "type_practice" = "Практика";
          "type_lab_work" = "Лаб. работа";
          */
+        
+        //Временные костыли в виде фиксированных курсов
 
         // Курсы для каждого дня
         coursesForDay("day_mon", [
-            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_mde_151", locationKey: "cr_a1", typeKey: "type_lecture", professorKey: "c_teacher_name_mde_151"),
-            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_css_410", locationKey: "cr_a2", typeKey: "type_lecture", professorKey: "c_teacher_name_css_410"),
-            (timeStartKey: "ct_4_start", timeEndKey: "ct_4_end", titleKey: "c_name_css_410", locationKey: "cr_a2", typeKey: "type_lecture", professorKey: "c_teacher_name_css_410"),
-            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_css_410", locationKey: "cr_a3", typeKey: "type_practice", professorKey: "c_teacher_name_css_410")
+            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_mde_151", locationKey: "(Virtual Room 96) VR 96", typeKey: "type_lecture", professorKey: "c_teacher_name_mde_151"),
+            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_css_410", locationKey: "(Virtual Room 53) VR 53", typeKey: "type_lecture", professorKey: "c_teacher_name_css_410"),
+            (timeStartKey: "ct_4_start", timeEndKey: "ct_4_end", titleKey: "c_name_css_410", locationKey: "(Virtual Room 53) VR 53", typeKey: "type_lecture", professorKey: "c_teacher_name_css_410"),
+            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_css_410", locationKey: "(Virtual Room 1) VR 1", typeKey: "type_practice", professorKey: "c_teacher_name_css_410")
         ])
 
         coursesForDay("day_tues", [
-            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_css_312", locationKey: "cr_e1", typeKey: "type_lecture", professorKey: "c_teacher_name_css_312_l")
+            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_css_312", locationKey: "(L.T. D2) E221", typeKey: "type_lecture", professorKey: "c_teacher_name_css_312_l")
         ])
 
         coursesForDay("day_wednes", [
-            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_inf_405", locationKey: "cr_a1", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405"),
-            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_inf_405", locationKey: "cr_a1", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405"),
-            (timeStartKey: "ct_10_start", timeEndKey: "ct_10_end", titleKey: "c_name_inf_405", locationKey: "cr_a1", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405")
+            (timeStartKey: "ct_8_start", timeEndKey: "ct_8_end", titleKey: "c_name_inf_405", locationKey: "(Virtual Room 2) VR 2", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405"),
+            (timeStartKey: "ct_9_start", timeEndKey: "ct_9_end", titleKey: "c_name_inf_405", locationKey: "(Virtual Room 2) VR 2", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405"),
+            (timeStartKey: "ct_10_start", timeEndKey: "ct_10_end", titleKey: "c_name_inf_405", locationKey: "(Virtual Room 2) VR 2", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_405")
         ])
 
         coursesForDay("day_thurs", [
-            (timeStartKey: "ct_5_start", timeEndKey: "ct_5_end", titleKey: "c_name_inf_228", locationKey: "cr_b2", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_228"),
-            (timeStartKey: "ct_6_start", timeEndKey: "ct_6_end", titleKey: "c_name_inf_228", locationKey: "cr_b2", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_228")
+            (timeStartKey: "ct_5_start", timeEndKey: "ct_5_end", titleKey: "c_name_inf_228", locationKey: "(SDU Life 202) SL 1", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_228"),
+            (timeStartKey: "ct_6_start", timeEndKey: "ct_6_end", titleKey: "c_name_inf_228", locationKey: "(SDU Life 202) SL 1", typeKey: "type_lecture", professorKey: "c_teacher_name_inf_228")
         ])
 
         coursesForDay("day_fri", [
-            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_312", locationKey: "cr_f1", typeKey: "type_practice", professorKey: "c_teacher_name_css_312_p"),
-            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_312", locationKey: "cr_f1", typeKey: "type_practice", professorKey: "c_teacher_name_css_312_p"),
-            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_inf_228", locationKey: "cr_g1", typeKey: "type_practice", professorKey: "c_teacher_name_inf_228")
+            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_312", locationKey: "(ENG 103) F103", typeKey: "type_practice", professorKey: "c_teacher_name_css_312_p"),
+            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_312", locationKey: "(ENG 103) F103", typeKey: "type_practice", professorKey: "c_teacher_name_css_312_p"),
+            (timeStartKey: "ct_3_start", timeEndKey: "ct_3_end", titleKey: "c_name_inf_228", locationKey: "(LAB-ECO1) G108", typeKey: "type_practice", professorKey: "c_teacher_name_inf_228")
         ])
 
         coursesForDay("day_satur", [
-            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "type_lecture", professorKey: "c_teacher_name_css_319"),
-            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "type_lecture", professorKey: "c_teacher_name_css_319"),
-            (timeStartKey: "ct_7_start", timeEndKey: "ct_7_end", titleKey: "c_name_css_319", locationKey: "cr_d1", typeKey: "type_practice", professorKey: "c_teacher_name_css_319")
+            (timeStartKey: "ct_1_start", timeEndKey: "ct_1_end", titleKey: "c_name_css_319", locationKey: "(Virtual Room 33) VR 33", typeKey: "type_lecture", professorKey: "c_teacher_name_css_319"),
+            (timeStartKey: "ct_2_start", timeEndKey: "ct_2_end", titleKey: "c_name_css_319", locationKey: "(Virtual Room 33) VR 33", typeKey: "type_lecture", professorKey: "c_teacher_name_css_319"),
+            (timeStartKey: "ct_7_start", timeEndKey: "ct_7_end", titleKey: "c_name_css_319", locationKey: "(Virtual Room 33) VR 33", typeKey: "type_practice", professorKey: "c_teacher_name_css_319")
         ])
         
         //test day
