@@ -6,6 +6,10 @@
   
 */
 
+//LESSONS INFO PAGE
+
+"online_lesson_link" = "Онлайн сабаққа сілтеме";
+
 //COURSES TYPE
 
 "type_lecture" = "Лекция";
@@ -37,7 +41,8 @@
 "c_teacher_name_mde_151" = "Еркебұлан Ақбердиев";
 "c_teacher_name_css_410" = "Жуманияз Маматнабиев";
 "c_teacher_name_css_312_l" = "Бауыржан Берліқожа";
-"c_teacher_name_css_312_p" = "Нұрбол Молдабай";
+//"c_teacher_name_css_312_p" = "Нұрбол Молдабай";
+"c_teacher_name_css_312_p" = "Мақсат Маратов";
 "c_teacher_name_inf_405" = "Алина Беделханова";
 "c_teacher_name_inf_228" = "Али Байгеленов";
 "c_teacher_name_css_319" = "Назым Тұрысбек";

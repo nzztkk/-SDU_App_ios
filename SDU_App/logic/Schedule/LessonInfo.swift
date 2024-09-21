@@ -61,7 +61,7 @@ struct LessonInfoPage: View {
                         .foregroundColor(.gray)
                     Text(": ")
                         .foregroundStyle(.gray)
-                    Link("Ссылка на урок", destination: URL(string: onlineLink)!)
+                    Link("online_lesson_link".lc, destination: URL(string: onlineLink)!)
                         .font(.subheadline)
                         .foregroundColor(.blue)
                 }
@@ -70,6 +70,6 @@ struct LessonInfoPage: View {
             Spacer()
         }
         .padding()
-        .navigationTitle("Информация о паре")
+        .navigationTitle("lesson_info_p".syswords)
     }
 }

@@ -13,7 +13,6 @@
 		141D319E2C81CECF00B7D303 /* SDU_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D319D2C81CECF00B7D303 /* SDU_AppTests.swift */; };
 		141D31A82C81CECF00B7D303 /* SDU_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D31A72C81CECF00B7D303 /* SDU_AppUITests.swift */; };
 		141D31AA2C81CECF00B7D303 /* SDU_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D31A92C81CECF00B7D303 /* SDU_AppUITestsLaunchTests.swift */; };
-		147C9E0B2C962D2000268345 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 147C9E0A2C962D2000268345 /* GoogleService-Info.plist */; };
 		147C9E0E2C9630CF00268345 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 147C9E0D2C9630CF00268345 /* FirebaseAnalytics */; };
 		147C9E102C9630CF00268345 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 147C9E0F2C9630CF00268345 /* FirebaseAnalyticsOnDeviceConversion */; };
 		147C9E122C9630CF00268345 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 147C9E112C9630CF00268345 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -23,8 +22,13 @@
 		147C9E1C2C974ECA00268345 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E1B2C974ECA00268345 /* Geometry.swift */; };
 		147C9E1E2C975FF700268345 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E1D2C975FF700268345 /* WeekView.swift */; };
 		147C9E202C976C0500268345 /* StringCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E1F2C976C0500268345 /* StringCalls.swift */; };
-		147C9E272C98B50A00268345 /* waterfall_animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E262C98B50A00268345 /* waterfall_animation.swift */; };
-		147C9E292C98BB3900268345 /* lesson_info_page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E282C98BB3900268345 /* lesson_info_page.swift */; };
+		147C9E272C98B50A00268345 /* Waterfall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E262C98B50A00268345 /* Waterfall.swift */; };
+		147C9E292C98BB3900268345 /* LessonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E282C98BB3900268345 /* LessonInfo.swift */; };
+		14C4764F2C9C40AB00F8B8E3 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C4764E2C9C40A300F8B8E3 /* ScheduleManager.swift */; };
+		14C476512C9C419400F8B8E3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C476502C9C418D00F8B8E3 /* NotificationManager.swift */; };
+		14C476532C9C482600F8B8E3 /* ntfy-test(это просто какой то прикол).apns in Resources */ = {isa = PBXBuildFile; fileRef = 14C476522C9C481B00F8B8E3 /* ntfy-test(это просто какой то прикол).apns */; };
+		14C4765C2C9C608C00F8B8E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14C4765B2C9C608C00F8B8E3 /* GoogleService-Info.plist */; };
+		14C4765F2C9D286E00F8B8E3 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C4765E2C9D286800F8B8E3 /* DatabaseManager.swift */; };
 		14D2BC342C92A11B00E4CB6D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D2BC322C92A11B00E4CB6D /* Localizable.strings */; };
 		14D2BC392C92A14A00E4CB6D /* sys_w.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D2BC372C92A14A00E4CB6D /* sys_w.strings */; };
 		14D2BC3C2C93E37C00E4CB6D /* courses_details.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D2BC3A2C93E37C00E4CB6D /* courses_details.strings */; };
@@ -68,13 +72,17 @@
 		147C9E042C954F5100268345 /* kk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kk; path = kk.lproj/courses_details.strings; sourceTree = "<group>"; };
 		147C9E052C954F5600268345 /* kk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kk; path = kk.lproj/sys_w.strings; sourceTree = "<group>"; };
 		147C9E082C9550A600268345 /* kk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kk; path = kk.lproj/Localizable.strings; sourceTree = "<group>"; };
-		147C9E0A2C962D2000268345 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		147C9E172C97498400268345 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		147C9E1B2C974ECA00268345 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		147C9E1D2C975FF700268345 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		147C9E1F2C976C0500268345 /* StringCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalls.swift; sourceTree = "<group>"; };
-		147C9E262C98B50A00268345 /* waterfall_animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waterfall_animation.swift; sourceTree = "<group>"; };
-		147C9E282C98BB3900268345 /* lesson_info_page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lesson_info_page.swift; sourceTree = "<group>"; };
+		147C9E262C98B50A00268345 /* Waterfall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waterfall.swift; sourceTree = "<group>"; };
+		147C9E282C98BB3900268345 /* LessonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonInfo.swift; sourceTree = "<group>"; };
+		14C4764E2C9C40A300F8B8E3 /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
+		14C476502C9C418D00F8B8E3 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		14C476522C9C481B00F8B8E3 /* ntfy-test(это просто какой то прикол).apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ntfy-test(это просто какой то прикол).apns"; sourceTree = "<group>"; };
+		14C4765B2C9C608C00F8B8E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		14C4765E2C9D286800F8B8E3 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		14D2BC382C92A14A00E4CB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/sys_w.strings; sourceTree = "<group>"; };
 		14D2BC3B2C93E37C00E4CB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/courses_details.strings; sourceTree = "<group>"; };
 		14E104ED2C90BA41001A7F36 /* screen_schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screen_schedule.swift; sourceTree = "<group>"; };
@@ -116,7 +124,6 @@
 		141D31802C81CECE00B7D303 = {
 			isa = PBXGroup;
 			children = (
-				147C9E0A2C962D2000268345 /* GoogleService-Info.plist */,
 				141D318B2C81CECE00B7D303 /* SDU_App */,
 				141D319C2C81CECF00B7D303 /* SDU_AppTests */,
 				141D31A62C81CECF00B7D303 /* SDU_AppUITests */,
@@ -137,6 +144,7 @@
 		141D318B2C81CECE00B7D303 /* SDU_App */ = {
 			isa = PBXGroup;
 			children = (
+				14C476582C9C5B9D00F8B8E3 /* Utils */,
 				14E104EF2C90FD89001A7F36 /* logic */,
 				14E104EC2C90B356001A7F36 /* res */,
 				14E104EB2C90795C001A7F36 /* screens */,
@@ -201,7 +209,8 @@
 		147C9E222C98B40400268345 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				147C9E282C98BB3900268345 /* lesson_info_page.swift */,
+				14C4764E2C9C40A300F8B8E3 /* ScheduleManager.swift */,
+				147C9E282C98BB3900268345 /* LessonInfo.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -209,9 +218,34 @@
 		147C9E252C98B4E300268345 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				147C9E262C98B50A00268345 /* waterfall_animation.swift */,
+				147C9E262C98B50A00268345 /* Waterfall.swift */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		14C4764B2C9C3EB000F8B8E3 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				14C476522C9C481B00F8B8E3 /* ntfy-test(это просто какой то прикол).apns */,
+				14C476502C9C418D00F8B8E3 /* NotificationManager.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		14C476582C9C5B9D00F8B8E3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				14C4765B2C9C608C00F8B8E3 /* GoogleService-Info.plist */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		14C4765D2C9D283A00F8B8E3 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				14C4765E2C9D286800F8B8E3 /* DatabaseManager.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		14D2BC352C92A12200E4CB6D /* languages */ = {
@@ -256,6 +290,8 @@
 		14E104EF2C90FD89001A7F36 /* logic */ = {
 			isa = PBXGroup;
 			children = (
+				14C4765D2C9D283A00F8B8E3 /* Database */,
+				14C4764B2C9C3EB000F8B8E3 /* Notifications */,
 				147C9E252C98B4E300268345 /* Animation */,
 				147C9E222C98B40400268345 /* Schedule */,
 			);
@@ -383,8 +419,9 @@
 				14D2BC392C92A14A00E4CB6D /* sys_w.strings in Resources */,
 				14D2BC342C92A11B00E4CB6D /* Localizable.strings in Resources */,
 				14D2BC3C2C93E37C00E4CB6D /* courses_details.strings in Resources */,
+				14C476532C9C482600F8B8E3 /* ntfy-test(это просто какой то прикол).apns in Resources */,
 				141D31912C81CECF00B7D303 /* Assets.xcassets in Resources */,
-				147C9E0B2C962D2000268345 /* GoogleService-Info.plist in Resources */,
+				14C4765C2C9C608C00F8B8E3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,13 +447,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				147C9E1E2C975FF700268345 /* WeekView.swift in Sources */,
-				147C9E272C98B50A00268345 /* waterfall_animation.swift in Sources */,
+				147C9E272C98B50A00268345 /* Waterfall.swift in Sources */,
 				141D318D2C81CECE00B7D303 /* SDU_App.swift in Sources */,
 				147C9E1C2C974ECA00268345 /* Geometry.swift in Sources */,
-				147C9E292C98BB3900268345 /* lesson_info_page.swift in Sources */,
+				147C9E292C98BB3900268345 /* LessonInfo.swift in Sources */,
 				147C9E202C976C0500268345 /* StringCalls.swift in Sources */,
+				14C4765F2C9D286E00F8B8E3 /* DatabaseManager.swift in Sources */,
+				14C476512C9C419400F8B8E3 /* NotificationManager.swift in Sources */,
 				14E104EE2C90BA41001A7F36 /* screen_schedule.swift in Sources */,
 				14E104F32C91B3F5001A7F36 /* screen_courses.swift in Sources */,
+				14C4764F2C9C40AB00F8B8E3 /* ScheduleManager.swift in Sources */,
 				14E104F52C91B49B001A7F36 /* screen_deadlines.swift in Sources */,
 				14E104F12C910603001A7F36 /* ViewBox.swift in Sources */,
 				147C9E182C97498400268345 /* Color.swift in Sources */,
@@ -613,12 +653,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SDU_App/Preview Content\"";
 				DEVELOPMENT_TEAM = QK5P573V9D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "SDU App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -640,7 +682,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -649,12 +691,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SDU_App/Preview Content\"";
 				DEVELOPMENT_TEAM = QK5P573V9D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "SDU App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -676,7 +720,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

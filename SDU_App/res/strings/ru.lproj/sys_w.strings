@@ -17,6 +17,10 @@
 
 "lesson_info_p" = "Информация о паре";
 
+//Notification text
+"ntfy_start_time" = "Начало в %@";
+"ntfy_location" = "в %@ аудитории";
+
 
 
 

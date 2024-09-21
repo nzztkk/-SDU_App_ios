@@ -45,7 +45,8 @@ struct ContentView: View {
                         Button(action: {
                             print("Кнопка нажата")
                         }) {
-                            Image(systemName: "calendar")
+                            Image(systemName: "person.crop.circle")
+                                
                         }
                     }
                 }

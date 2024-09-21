@@ -1,0 +1,9 @@
+{
+  "Simulator Target Bundle": "soloP.SDU-App",
+  "aps": {
+    "alert": {
+      "title": "Test Notification",
+      "body": "This is a test of the notifications in the iOS simulator."
+    }
+  }
+}

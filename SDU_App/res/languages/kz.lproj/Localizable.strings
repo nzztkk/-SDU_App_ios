@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  SDU_App
+
+  Created by Nurkhat on 12.09.2024.
+  
+*/
+
+"day_monday" = "Понедельник";
+"day_tuesday" = "Вторник";
+"day_wednesday" = "Среда";
+"day_thursday" = "Четверг";
+"day_friday" = "Пятница";
+"day_saturday" = "Суббота";
+"day_sunday" = "Воскресенье";

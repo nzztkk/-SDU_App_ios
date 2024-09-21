@@ -1,20 +1,10 @@
-/*
+/* 
   courses_details.strings
   SDU_App
 
   Created by Nurkhat on 13.09.2024.
   
 */
-
-//LESSONS INFO PAGE
-
-"online_lesson_link" = "Ссылка на онлайн урок";
-
-//COURSES TYPE
-
-"type_lecture" = "Лекция";
-"type_practice" = "Практика";
-"type_lab_work" = "Лаб. работа";
 
 // COURSES CODES
 
@@ -41,8 +31,7 @@
 "c_teacher_name_mde_151" = "Еркебұлан Ақбердиев";
 "c_teacher_name_css_410" = "Жуманияз Маматнабиев";
 "c_teacher_name_css_312_l" = "Бауыржан Берліқожа";
-//"c_teacher_name_css_312_p" = "Нұрбол Молдабай";
-"c_teacher_name_css_312_p" = "Мақсат Маратов";
+"c_teacher_name_css_312_p" = "Нұрбол Молдабай";
 "c_teacher_name_inf_405" = "Алина Беделханова";
 "c_teacher_name_inf_228" = "Али Байгеленов";
 "c_teacher_name_css_319" = "Назым Тұрысбек";
@@ -112,17 +101,6 @@
 "ct_12_end" = "20:20";
 "ct_13_end" = "21:20";
 "ct_14_end" = "22:20";
-
-
-//test values
-
-"test_time1" = "16:45";
-"test_time2" = "15:17";
-"test_time3" = "15:19";
-"test_time4" = "15:21";
-"test_time5" = "15:23";
-"test_time6" = "15:25";
-
 
 
 

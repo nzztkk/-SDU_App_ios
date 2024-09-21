@@ -17,5 +17,10 @@
 
 "lesson_info_p" = "Сабақтың толық ақпараты";
 
+//Notification text
+"ntfy_start_time" = "Сабақтың басталуы %@";
+"ntfy_location" = "%@ аудиторияда";
+
+
 
 

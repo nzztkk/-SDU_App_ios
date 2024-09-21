@@ -7,17 +7,13 @@
 */
 
 
+"welcome_message" = "Welcome to the app!";
 "login_button" = "Login";
-//"signup_button" = "Sign Up";
+"signup_button" = "Sign Up";
 
 //Pages
 "schedule_p" = "Schedule";
 "courses_p" = "Courses";
 "deadlines_p" = "Deadlines";
 
-"lesson_info_p" = "Lesson info";
-
-//Notification text
-"ntfy_start_time" = "Lesson starts at %@";
-"ntfy_location" = "in the %@ classroom";
 
