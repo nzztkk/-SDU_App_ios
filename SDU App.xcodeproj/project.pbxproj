@@ -34,6 +34,7 @@
 		14D1CA1C2C9F501200F376C0 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 14D1CA1B2C9F501200F376C0 /* FirebaseDatabase */; };
 		14D1CA1E2C9F501900F376C0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 14D1CA1D2C9F501900F376C0 /* FirebaseStorage */; };
 		14D1CA202C9F504C00F376C0 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 14D1CA1F2C9F504C00F376C0 /* FirebaseFirestoreCombine-Community */; };
+		14D1CA222CA06EB500F376C0 /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1CA212CA06EB500F376C0 /* DatabaseConnection.swift */; };
 		14D2BC342C92A11B00E4CB6D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D2BC322C92A11B00E4CB6D /* Localizable.strings */; };
 		14D2BC392C92A14A00E4CB6D /* sys_w.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D2BC372C92A14A00E4CB6D /* sys_w.strings */; };
 		14D2BC3C2C93E37C00E4CB6D /* courses_details.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D2BC3A2C93E37C00E4CB6D /* courses_details.strings */; };
@@ -88,6 +89,7 @@
 		14C476522C9C481B00F8B8E3 /* ntfy-test(это просто какой то прикол).apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ntfy-test(это просто какой то прикол).apns"; sourceTree = "<group>"; };
 		14C4765B2C9C608C00F8B8E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14C4765E2C9D286800F8B8E3 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		14D1CA212CA06EB500F376C0 /* DatabaseConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
 		14D2BC382C92A14A00E4CB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/sys_w.strings; sourceTree = "<group>"; };
 		14D2BC3B2C93E37C00E4CB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/courses_details.strings; sourceTree = "<group>"; };
 		14E104ED2C90BA41001A7F36 /* screen_schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screen_schedule.swift; sourceTree = "<group>"; };
@@ -210,14 +212,6 @@
 			path = Geometry;
 			sourceTree = "<group>";
 		};
-		147C9E212C98B3E400268345 /* Schedule */ = {
-			isa = PBXGroup;
-			children = (
-				14E104ED2C90BA41001A7F36 /* screen_schedule.swift */,
-			);
-			path = Schedule;
-			sourceTree = "<group>";
-		};
 		147C9E222C98B40400268345 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				14C4765E2C9D286800F8B8E3 /* DatabaseManager.swift */,
+				14D1CA212CA06EB500F376C0 /* DatabaseConnection.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -295,9 +290,9 @@
 		14E104EB2C90795C001A7F36 /* screens */ = {
 			isa = PBXGroup;
 			children = (
-				147C9E212C98B3E400268345 /* Schedule */,
 				14E104F22C91B3F5001A7F36 /* screen_courses.swift */,
 				14E104F42C91B49B001A7F36 /* screen_deadlines.swift */,
+				14E104ED2C90BA41001A7F36 /* screen_schedule.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -478,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				147C9E1E2C975FF700268345 /* WeekView.swift in Sources */,
+				14D1CA222CA06EB500F376C0 /* DatabaseConnection.swift in Sources */,
 				147C9E272C98B50A00268345 /* Waterfall.swift in Sources */,
 				141D318D2C81CECE00B7D303 /* SDU_App.swift in Sources */,
 				147C9E1C2C974ECA00268345 /* Geometry.swift in Sources */,

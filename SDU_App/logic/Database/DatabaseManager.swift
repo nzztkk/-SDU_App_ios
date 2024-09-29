@@ -5,96 +5,56 @@
 //  Created by Nurkhat on 20.09.2024.
 //
 
-
-import Foundation
 import FirebaseFirestore
-//import FirebaseFirestoreSwift
+import SwiftUI
 
 class DatabaseManager {
-    
     static let shared = DatabaseManager()
     private let db = Firestore.firestore()
-    
+
     private init() {}
-    
-    // MARK: - Add Data
-    
-    /// Add a new document to the Firestore collection
-    func addUser(userID: String, firstName: String, lastName: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        let userData: [String: Any] = [
-            "firstName": firstName,
-            "lastName": lastName
-        ]
-        
-        db.collection("users").document(userID).setData(userData) { error in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.success(()))
-            }
+
+    struct Course: Codable, Identifiable {
+        let id = UUID()
+        let courseCode: String
+        let courseName: String
+        let professor: String
+        let day: String
+        let time: String
+        let location: String?
+        let onlineLink: String?
+    }
+
+    // Fetch courses data with locale support
+    func fetchCourses(locale: String) async throws -> [Course] {
+        let snapshot = try await db.collection("Courses_code&name(\(locale))").getDocuments()
+        let courses = snapshot.documents.compactMap { document -> Course? in
+            let data = document.data()
+            return Course(
+                courseCode: data["course_code"] as? String ?? "",
+                courseName: data["course_name"] as? String ?? "",
+                professor: data["professor"] as? String ?? "",
+                day: data["day"] as? String ?? "",
+                time: data["time"] as? String ?? "",
+                location: data["location"] as? String,
+                onlineLink: data["online_link"] as? String
+            )
         }
+        return courses
     }
     
-    // MARK: - Fetch Data
-    
-    /// Fetch a single user's data from Firestore
-    func fetchUser(userID: String, completion: @escaping (Result<[String: Any], Error>) -> Void) {
-        let userRef = db.collection("users").document(userID)
-        
-        userRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                if let data = document.data() {
-                    completion(.success(data))
-                }
-            } else if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.failure(NSError(domain: "Firestore", code: 404, userInfo: [NSLocalizedDescriptionKey: "Document does not exist"])))
-            }
-        }
+    func fetchTeachers(locale: String) async throws -> [String] {
+        let snapshot = try await db.collection("teachers_\(locale)").getDocuments()
+        return snapshot.documents.compactMap { $0.data()["name"] as? String }
     }
-    
-    // MARK: - Update Data
-    
-    /// Update user's data in Firestore
-    func updateUser(userID: String, updatedData: [String: Any], completion: @escaping (Result<Void, Error>) -> Void) {
-        let userRef = db.collection("users").document(userID)
-        
-        userRef.updateData(updatedData) { error in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.success(()))
-            }
-        }
+
+    func fetchLessonStartTimes() async throws -> [String] {
+        let snapshot = try await db.collection("lessons_start_time").getDocuments()
+        return snapshot.documents.compactMap { $0.data()["start_time"] as? String }
     }
-    
-    // MARK: - Delete Data
-    
-    /// Delete a user from Firestore
-    func deleteUser(userID: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        let userRef = db.collection("users").document(userID)
-        
-        userRef.delete { error in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.success(()))
-            }
-        }
-    }
-    
-    // MARK: - Fetch All Users
-    
-    /// Fetch all users in the "users" collection
-    func fetchAllUsers(completion: @escaping (Result<[[String: Any]], Error>) -> Void) {
-        db.collection("users").getDocuments { (snapshot, error) in
-            if let error = error {
-                completion(.failure(error))
-            } else if let snapshot = snapshot {
-                let users = snapshot.documents.map { $0.data() }
-                completion(.success(users))
-            }
-        }
+
+    func fetchLessonEndTimes() async throws -> [String] {
+        let snapshot = try await db.collection("lessons_end_time").getDocuments()
+        return snapshot.documents.compactMap { $0.data()["end_time"] as? String }
     }
 }
