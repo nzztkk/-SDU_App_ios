@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140C58CA2CDFBA8900DA7FF4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 140C58C92CDFBA7300DA7FF4 /* .gitignore */; };
 		141D318D2C81CECE00B7D303 /* SDU_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D318C2C81CECE00B7D303 /* SDU_App.swift */; };
 		141D31912C81CECF00B7D303 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141D31902C81CECF00B7D303 /* Assets.xcassets */; };
 		141D31942C81CECF00B7D303 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141D31932C81CECF00B7D303 /* Preview Assets.xcassets */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		140C58C92CDFBA7300DA7FF4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		141D31892C81CECE00B7D303 /* SDU App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SDU App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		141D318C2C81CECE00B7D303 /* SDU_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDU_App.swift; sourceTree = "<group>"; };
 		141D31902C81CECF00B7D303 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				141D31902C81CECF00B7D303 /* Assets.xcassets */,
 				141D31922C81CECF00B7D303 /* Preview Content */,
 				14E104F02C910603001A7F36 /* ViewBox.swift */,
+				140C58C92CDFBA7300DA7FF4 /* .gitignore */,
 				147C9E1D2C975FF700268345 /* WeekView.swift */,
 			);
 			path = SDU_App;
@@ -441,6 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140C58CA2CDFBA8900DA7FF4 /* .gitignore in Resources */,
 				141D31942C81CECF00B7D303 /* Preview Assets.xcassets in Resources */,
 				14D2BC392C92A14A00E4CB6D /* sys_w.strings in Resources */,
 				14D2BC342C92A11B00E4CB6D /* Localizable.strings in Resources */,
