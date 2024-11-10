@@ -8,9 +8,6 @@
 import Foundation
 import SwiftUI
 
-// DatabaseConnection.swift (предполагается, что этот файл у тебя уже есть)
-// ...
-
 struct Course: Identifiable, Hashable {
     let id = UUID()
     var day: String
@@ -34,7 +31,7 @@ struct Course: Identifiable, Hashable {
 
 struct SchedulePage: View {
     @State private var expandedDays: Set<String> = []
-    @ObservedObject var dbConnection = DatabaseConnection()
+    @ObservedObject var dbConnection = DatabaseConnection()  // Использование DatabaseConnection
     @State private var isLoading = false
 
     var body: some View {
@@ -58,28 +55,28 @@ struct SchedulePage: View {
         .refreshable {
             isLoading = true
             Task {
-                await $dbConnection.getCoursesData()
-                DispatchQueue.main.async { // Обновляем состояние в главном потоке
+                await dbConnection.getCoursesData()
+                DispatchQueue.main.async {
                     isLoading = false
                 }
             }
         }
         .navigationTitle("schedule_p".syswords)
         .overlay(alignment: .center) {
-            if isLoading || dbConnection.isLoading {
+            if dbConnection.isLoading {  // Используем isLoading, определенное в DatabaseConnection
                 ProgressView()
             }
         }
         .onAppear {
             Task {
-                await $dbConnection.getCoursesData()
+                await dbConnection.getCoursesData()
                 DispatchQueue.main.async {
                     isLoading = false
                 }
             }
         }
         .onChange(of: dbConnection.isLoading) { newValue in
-            isLoading = newValue
+            isLoading = newValue  // Привязка состояния isLoading
         }
     }
 

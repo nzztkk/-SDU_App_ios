@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,7 +24,6 @@
 		147C9E1E2C975FF700268345 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E1D2C975FF700268345 /* WeekView.swift */; };
 		147C9E202C976C0500268345 /* StringCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E1F2C976C0500268345 /* StringCalls.swift */; };
 		147C9E272C98B50A00268345 /* Waterfall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E262C98B50A00268345 /* Waterfall.swift */; };
-		147C9E292C98BB3900268345 /* LessonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E282C98BB3900268345 /* LessonInfo.swift */; };
 		14C4764F2C9C40AB00F8B8E3 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C4764E2C9C40A300F8B8E3 /* ScheduleManager.swift */; };
 		14C476512C9C419400F8B8E3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C476502C9C418D00F8B8E3 /* NotificationManager.swift */; };
 		14C476532C9C482600F8B8E3 /* ntfy-test(это просто какой то прикол).apns in Resources */ = {isa = PBXBuildFile; fileRef = 14C476522C9C481B00F8B8E3 /* ntfy-test(это просто какой то прикол).apns */; };
@@ -85,7 +84,6 @@
 		147C9E1D2C975FF700268345 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		147C9E1F2C976C0500268345 /* StringCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalls.swift; sourceTree = "<group>"; };
 		147C9E262C98B50A00268345 /* Waterfall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waterfall.swift; sourceTree = "<group>"; };
-		147C9E282C98BB3900268345 /* LessonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonInfo.swift; sourceTree = "<group>"; };
 		14C4764E2C9C40A300F8B8E3 /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
 		14C476502C9C418D00F8B8E3 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		14C476522C9C481B00F8B8E3 /* ntfy-test(это просто какой то прикол).apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ntfy-test(это просто какой то прикол).apns"; sourceTree = "<group>"; };
@@ -99,6 +97,10 @@
 		14E104F22C91B3F5001A7F36 /* screen_courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screen_courses.swift; sourceTree = "<group>"; };
 		14E104F42C91B49B001A7F36 /* screen_deadlines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screen_deadlines.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		140C58CB2CE0E11400DA7FF4 /* pages */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = pages; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		141D31862C81CECE00B7D303 /* Frameworks */ = {
@@ -219,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				14C4764E2C9C40A300F8B8E3 /* ScheduleManager.swift */,
-				147C9E282C98BB3900268345 /* LessonInfo.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -286,6 +287,7 @@
 		14E104EB2C90795C001A7F36 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				140C58CB2CE0E11400DA7FF4 /* pages */,
 				14E104F22C91B3F5001A7F36 /* screen_courses.swift */,
 				14E104F42C91B49B001A7F36 /* screen_deadlines.swift */,
 				14E104ED2C90BA41001A7F36 /* screen_schedule.swift */,
@@ -328,6 +330,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				140C58CB2CE0E11400DA7FF4 /* pages */,
 			);
 			name = "SDU App";
 			packageProductDependencies = (
@@ -473,7 +478,6 @@
 				147C9E272C98B50A00268345 /* Waterfall.swift in Sources */,
 				141D318D2C81CECE00B7D303 /* SDU_App.swift in Sources */,
 				147C9E1C2C974ECA00268345 /* Geometry.swift in Sources */,
-				147C9E292C98BB3900268345 /* LessonInfo.swift in Sources */,
 				147C9E202C976C0500268345 /* StringCalls.swift in Sources */,
 				14C4765F2C9D286E00F8B8E3 /* DatabaseManager.swift in Sources */,
 				14C476512C9C419400F8B8E3 /* NotificationManager.swift in Sources */,
