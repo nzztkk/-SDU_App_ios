@@ -9,7 +9,6 @@ class DatabaseConnection: ObservableObject {
     
     var db: Firestore!
 
-    // Убираем override и super.init(), инициализатор больше не нужен для ObservableObject
     init() {
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
@@ -40,16 +39,24 @@ class DatabaseConnection: ObservableObject {
     }
 
     func getCoursesData() async {
-        isLoading = true  // Устанавливаем isLoading в true
+        DispatchQueue.main.async {
+            self.isLoading = true  // Устанавливаем isLoading в true на главном потоке
+        }
         do {
             let querySnapshot = try await db.collection("Courses_code&name(rus)").getDocuments()
             for document in querySnapshot.documents {
                 print("\(document.documentID) => \(document.data())")
+                // Можно добавить код для обработки данных из документа, например:
+                // self.courses.append(Course(data: document.data())) или что-то подобное
             }
-            isLoading = false  // После загрузки устанавливаем isLoading в false
+            DispatchQueue.main.async {
+                self.isLoading = false  // После загрузки устанавливаем isLoading в false на главном потоке
+            }
         } catch {
             print("Error getting documents: \(error)")
-            isLoading = false  // Если ошибка, тоже выключаем загрузку
+            DispatchQueue.main.async {
+                self.isLoading = false  // Если ошибка, тоже выключаем загрузку на главном потоке
+            }
         }
     }
 }

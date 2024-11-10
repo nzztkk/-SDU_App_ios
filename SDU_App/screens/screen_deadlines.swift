@@ -72,6 +72,7 @@ struct DeadlinesPage: View {
                                             Text("Удалить")
                                         }
                                     }
+                                    .animation(.easeInOut(duration: 0.3)) // Плавная анимация при завершении
                             }
                         }
                     } else {
@@ -80,6 +81,7 @@ struct DeadlinesPage: View {
                         } else {
                             ForEach(completedDeadlines) { deadline in
                                 DeadlineItem(deadline: deadline)
+                                    .transition(.opacity.combined(with: .slide)) // Плавный переход
                             }
                         }
                     }
@@ -111,38 +113,67 @@ struct DeadlinesPage: View {
         }
         .navigationTitle("Задачи и дедлайны")
         .gesture(DragGesture().onEnded { value in
-            if value.translation.width < -100 {
-                selectedTab = 1
-            } else if value.translation.width > 100 {
-                selectedTab = 0
+            withAnimation {
+                if value.translation.width < -50 {
+                    selectedTab = 1
+                } else if value.translation.width > 50 {
+                    selectedTab = 0
+                }
             }
         })
         .onAppear {
             loadDeadlines()
             moveExpiredDeadlinesToArchive()
             saveDeadlines()
+
+            // Запускаем таймер для проверки дедлайнов каждую минуту
+            Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
+                completeDeadlineIfExpired() // Проверяем дедлайны на завершение каждую минуту
+            }
+        }
+    }
+    
+    // Функция для завершения дедлайна по времени
+    func completeDeadlineIfExpired() {
+        let currentDate = Date() // Получаем текущую дату и время
+
+        // Проверяем дедлайны на завершение, если время дедлайна истекло
+        for index in deadlines.indices {
+            if let deadlineDate = deadlines[index].time.toDate(), !deadlines[index].isCompleted {
+                if currentDate >= deadlineDate { // Если текущее время >= времени дедлайна
+                    // Завершаем дедлайн
+                    deadlines[index].isCompleted = true
+                    moveDeadlineToCompleted(deadlines[index])
+                    deadlines.remove(at: index)
+                    saveDeadlines()
+                    break // Завершаем цикл после изменения дедлайна
+                }
+            }
         }
     }
 
+    // Перемещение дедлайна в завершённые
+    func moveDeadlineToCompleted(_ deadline: Deadline) {
+        if !completedDeadlines.contains(where: { $0.id == deadline.id }) {
+            completedDeadlines.append(deadline)
+            saveDeadlines()
+        }
+    }
+    
+    // Остальные методы без изменений
     func moveExpiredDeadlinesToArchive() {
         let currentDate = Date()
-        
-        // Фильтруем дедлайны, которые просрочены более чем на 30 дней
         let expiredDeadlines = deadlines.filter { deadline in
             if let deadlineDate = deadline.time.toDate() {
-                return !deadline.isCompleted && deadlineDate < currentDate.addingTimeInterval(-30 * 24 * 60 * 60) // 30 дней
+                return !deadline.isCompleted && deadlineDate < currentDate.addingTimeInterval(-30 * 24 * 60 * 60)
             }
             return false
         }
-        
-        // Добавляем просроченные дедлайны в архив
         for deadline in expiredDeadlines {
             if !completedDeadlines.contains(where: { $0.id == deadline.id }) {
                 completedDeadlines.append(deadline)
             }
         }
-        
-        // Удаляем просроченные дедлайны из активного списка
         deadlines.removeAll { deadline in
             if let deadlineDate = deadline.time.toDate() {
                 return !deadline.isCompleted && deadlineDate < currentDate.addingTimeInterval(-30 * 24 * 60 * 60)
@@ -151,56 +182,43 @@ struct DeadlinesPage: View {
         }
     }
 
-    // Сохранение дедлайнов в UserDefaults
     func saveDeadlines() {
         if let encoded = try? JSONEncoder().encode(deadlines) {
             UserDefaults.standard.set(encoded, forKey: "deadlines")
         }
-        
         if let encoded = try? JSONEncoder().encode(completedDeadlines) {
             UserDefaults.standard.set(encoded, forKey: "completedDeadlines")
         }
     }
 
-    // В методе loadDeadlines
     func loadDeadlines() {
         if let data = UserDefaults.standard.data(forKey: "deadlines"),
            let decoded = try? JSONDecoder().decode([Deadline].self, from: data) {
             deadlines = decoded
         }
-
         if let data = UserDefaults.standard.data(forKey: "completedDeadlines"),
            let decoded = try? JSONDecoder().decode([Deadline].self, from: data) {
             completedDeadlines = decoded
         }
-
-        removeExpiredDeadlinesFromCache() // Добавляем очистку просроченных дедлайнов при загрузке
+        removeExpiredDeadlinesFromCache()
     }
 
-    // Удаление просроченных дедлайнов через 21 день
     func removeExpiredDeadlinesFromCache() {
         let currentDate = Date()
-        
-        // Проверяем завершённые дедлайны на срок хранения в 21 день
         completedDeadlines.removeAll { deadline in
             if let deadlineDate = deadline.time.toDate() {
                 return deadlineDate.addingTimeInterval(21 * 24 * 60 * 60) < currentDate
             }
             return false
         }
-        
-        // Сохраняем обновлённые данные в UserDefaults
         saveDeadlines()
     }
 
-    // В методе deleteDeadline
     func deleteDeadline(_ deadline: Deadline) {
         if let index = deadlines.firstIndex(where: { $0.id == deadline.id }) {
             deadlines.remove(at: index)
-            saveDeadlines() // Сохраняем изменения после удаления
+            saveDeadlines()
         }
-
-        // Если дедлайн был в завершённых, удаляем его оттуда
         if let index = completedDeadlines.firstIndex(where: { $0.id == deadline.id }) {
             completedDeadlines.remove(at: index)
             saveDeadlines()
@@ -230,7 +248,7 @@ struct AddDeadlineForm: View {
                         .disableAutocorrection(true)
                         .textInputAutocapitalization(.sentences)
                     
-                    DatePicker("Дата дедлайна", selection: $deadlineDate, in: Date()..., displayedComponents: [.date, .hourAndMinute])
+                    DatePicker("Дата", selection: $deadlineDate, in: Date()..., displayedComponents: [.date, .hourAndMinute])
                     
                     VStack {
                         Text("Приоритет: \(priorityLevelText(for: Int(priority)))")
