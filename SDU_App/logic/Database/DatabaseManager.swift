@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseFirestore
+//import FirebaseFirestoreSwift
 
 class DatabaseManager {
     
@@ -15,12 +16,6 @@ class DatabaseManager {
     private let db = Firestore.firestore()
     
     private init() {}
-    
-    
-    struct Courses: Codable {
-        let course_code: String
-        let course_name: String
-    }
     
     // MARK: - Add Data
     

@@ -1,0 +1,371 @@
+diff --git a/SDU App.xcodeproj/project.pbxproj b/SDU App.xcodeproj/project.pbxproj
+index 4731749..c8fc0aa 100644
+--- a/SDU App.xcodeproj/project.pbxproj	
++++ b/SDU App.xcodeproj/project.pbxproj	
+@@ -13,6 +13,7 @@
+ 		141D319E2C81CECF00B7D303 /* SDU_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D319D2C81CECF00B7D303 /* SDU_AppTests.swift */; };
+ 		141D31A82C81CECF00B7D303 /* SDU_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D31A72C81CECF00B7D303 /* SDU_AppUITests.swift */; };
+ 		141D31AA2C81CECF00B7D303 /* SDU_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D31A92C81CECF00B7D303 /* SDU_AppUITestsLaunchTests.swift */; };
++		14262CB02CB903750024A0D0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 14262CAF2CB903750024A0D0 /* FirebaseAuth */; };
+ 		147C9E0E2C9630CF00268345 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 147C9E0D2C9630CF00268345 /* FirebaseAnalytics */; };
+ 		147C9E102C9630CF00268345 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 147C9E0F2C9630CF00268345 /* FirebaseAnalyticsOnDeviceConversion */; };
+ 		147C9E122C9630CF00268345 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 147C9E112C9630CF00268345 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+@@ -108,6 +109,7 @@
+ 				147C9E0E2C9630CF00268345 /* FirebaseAnalytics in Frameworks */,
+ 				147C9E162C9630CF00268345 /* FirebaseAppDistribution-Beta in Frameworks */,
+ 				147C9E122C9630CF00268345 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
++				14262CB02CB903750024A0D0 /* FirebaseAuth in Frameworks */,
+ 				147C9E102C9630CF00268345 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+ 				14D1CA1C2C9F501200F376C0 /* FirebaseDatabase in Frameworks */,
+ 				14D1CA1A2C9F500A00F376C0 /* FirebaseFirestore in Frameworks */,
+@@ -210,14 +212,6 @@
+ 			path = Geometry;
+ 			sourceTree = "<group>";
+ 		};
+-		147C9E212C98B3E400268345 /* Schedule */ = {
+-			isa = PBXGroup;
+-			children = (
+-				14E104ED2C90BA41001A7F36 /* screen_schedule.swift */,
+-			);
+-			path = Schedule;
+-			sourceTree = "<group>";
+-		};
+ 		147C9E222C98B40400268345 /* Schedule */ = {
+ 			isa = PBXGroup;
+ 			children = (
+@@ -295,9 +289,9 @@
+ 		14E104EB2C90795C001A7F36 /* screens */ = {
+ 			isa = PBXGroup;
+ 			children = (
+-				147C9E212C98B3E400268345 /* Schedule */,
+ 				14E104F22C91B3F5001A7F36 /* screen_courses.swift */,
+ 				14E104F42C91B49B001A7F36 /* screen_deadlines.swift */,
++				14E104ED2C90BA41001A7F36 /* screen_schedule.swift */,
+ 			);
+ 			path = screens;
+ 			sourceTree = "<group>";
+@@ -351,6 +345,7 @@
+ 				14D1CA1B2C9F501200F376C0 /* FirebaseDatabase */,
+ 				14D1CA1D2C9F501900F376C0 /* FirebaseStorage */,
+ 				14D1CA1F2C9F504C00F376C0 /* FirebaseFirestoreCombine-Community */,
++				14262CAF2CB903750024A0D0 /* FirebaseAuth */,
+ 			);
+ 			productName = SDU_App;
+ 			productReference = 141D31892C81CECE00B7D303 /* SDU App.app */;
+@@ -400,7 +395,7 @@
+ 			attributes = {
+ 				BuildIndependentTargetsInParallel = 1;
+ 				LastSwiftUpdateCheck = 1540;
+-				LastUpgradeCheck = 1540;
++				LastUpgradeCheck = 1600;
+ 				TargetAttributes = {
+ 					141D31882C81CECE00B7D303 = {
+ 						CreatedOnToolsVersion = 15.4;
+@@ -565,6 +560,7 @@
+ 			buildSettings = {
+ 				ALWAYS_SEARCH_USER_PATHS = NO;
+ 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
++				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+ 				CLANG_ANALYZER_NONNULL = YES;
+ 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+ 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+@@ -628,6 +624,7 @@
+ 			buildSettings = {
+ 				ALWAYS_SEARCH_USER_PATHS = NO;
+ 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
++				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+ 				CLANG_ANALYZER_NONNULL = YES;
+ 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+ 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+@@ -758,7 +755,6 @@
+ 		141D31B12C81CECF00B7D303 /* Debug */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
+-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+ 				BUNDLE_LOADER = "$(TEST_HOST)";
+ 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+ 				CODE_SIGN_STYLE = Automatic;
+@@ -779,7 +775,6 @@
+ 		141D31B22C81CECF00B7D303 /* Release */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
+-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+ 				BUNDLE_LOADER = "$(TEST_HOST)";
+ 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+ 				CODE_SIGN_STYLE = Automatic;
+@@ -800,7 +795,6 @@
+ 		141D31B42C81CECF00B7D303 /* Debug */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
+-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+ 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+ 				CODE_SIGN_STYLE = Automatic;
+ 				CURRENT_PROJECT_VERSION = 1;
+@@ -819,7 +813,6 @@
+ 		141D31B52C81CECF00B7D303 /* Release */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
+-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+ 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+ 				CODE_SIGN_STYLE = Automatic;
+ 				CURRENT_PROJECT_VERSION = 1;
+@@ -896,6 +889,11 @@
+ /* End XCRemoteSwiftPackageReference section */
+ 
+ /* Begin XCSwiftPackageProductDependency section */
++		14262CAF2CB903750024A0D0 /* FirebaseAuth */ = {
++			isa = XCSwiftPackageProductDependency;
++			package = 147C9E0C2C9630CF00268345 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
++			productName = FirebaseAuth;
++		};
+ 		147C9E0D2C9630CF00268345 /* FirebaseAnalytics */ = {
+ 			isa = XCSwiftPackageProductDependency;
+ 			package = 147C9E0C2C9630CF00268345 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+diff --git a/SDU App.xcodeproj/xcshareddata/xcschemes/SDU_App.xcscheme b/SDU App.xcodeproj/xcshareddata/xcschemes/SDU_App.xcscheme
+index 83c9dba..1bd03d5 100644
+--- a/SDU App.xcodeproj/xcshareddata/xcschemes/SDU_App.xcscheme	
++++ b/SDU App.xcodeproj/xcshareddata/xcschemes/SDU_App.xcscheme	
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   LastUpgradeVersion = "1540"
++   LastUpgradeVersion = "1600"
+    version = "1.7">
+    <BuildAction
+       parallelizeBuildables = "YES"
+diff --git a/SDU_App/SDU_App.swift b/SDU_App/SDU_App.swift
+index 3d612f4..8165c1c 100644
+--- a/SDU_App/SDU_App.swift
++++ b/SDU_App/SDU_App.swift
+@@ -7,7 +7,8 @@
+ 
+ import SwiftUI
+ import FirebaseCore
+-
++import FirebaseFirestore
++import FirebaseAuth
+ @main
+ struct SDU_App: App {
+     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+diff --git a/SDU_App/logic/Database/DatabaseManager.swift b/SDU_App/logic/Database/DatabaseManager.swift
+index e10accd..2f81e89 100644
+--- a/SDU_App/logic/Database/DatabaseManager.swift
++++ b/SDU_App/logic/Database/DatabaseManager.swift
+@@ -1,99 +1,44 @@
+-//
+-//  DatabaseManager.swift
+-//  SDU App
+-//
+-//  Created by Nurkhat on 20.09.2024.
+-//
+-
+-
+ import Foundation
+ import FirebaseFirestore
+-//import FirebaseFirestoreSwift
+ 
+-class DatabaseManager {
++struct Course: Identifiable, Codable {
++    let id: String
++    let title: String
++    let type: CourseType
++    let time: String
++    let location: String
++    let professor: String
++}
++
++enum CourseType: String, Codable {
++    case lecture
++    case seminar
++    case labwork
++}
++
++class DatabaseManager: ObservableObject {
++    
++    @Published var courses: [Course] = []
+     
+     static let shared = DatabaseManager()
+     private let db = Firestore.firestore()
+     
+-    private init() {}
+-    
+-    // MARK: - Add Data
+-    
+-    /// Add a new document to the Firestore collection
+-    func addUser(userID: String, firstName: String, lastName: String, completion: @escaping (Result<Void, Error>) -> Void) {
+-        let userData: [String: Any] = [
+-            "firstName": firstName,
+-            "lastName": lastName
+-        ]
+-        
+-        db.collection("users").document(userID).setData(userData) { error in
+-            if let error = error {
+-                completion(.failure(error))
+-            } else {
+-                completion(.success(()))
+-            }
+-        }
++    private init() {
++        fetchCourses()
+     }
+     
+     // MARK: - Fetch Data
+     
+     /// Fetch a single user's data from Firestore
+-    func fetchUser(userID: String, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+-        let userRef = db.collection("users").document(userID)
+-        
+-        userRef.getDocument { (document, error) in
+-            if let document = document, document.exists {
+-                if let data = document.data() {
+-                    completion(.success(data))
+-                }
+-            } else if let error = error {
+-                completion(.failure(error))
+-            } else {
+-                completion(.failure(NSError(domain: "Firestore", code: 404, userInfo: [NSLocalizedDescriptionKey: "Document does not exist"])))
++    func fetchCourses() {
++        db.collection("courses").addSnapshotListener { (querySnapshot, error) in
++            guard let documents = querySnapshot?.documents else {
++                print("Error fetching documents: \(error!)")
++                return
+             }
+-        }
+-    }
+-    
+-    // MARK: - Update Data
+-    
+-    /// Update user's data in Firestore
+-    func updateUser(userID: String, updatedData: [String: Any], completion: @escaping (Result<Void, Error>) -> Void) {
+-        let userRef = db.collection("users").document(userID)
+-        
+-        userRef.updateData(updatedData) { error in
+-            if let error = error {
+-                completion(.failure(error))
+-            } else {
+-                completion(.success(()))
+-            }
+-        }
+-    }
+-    
+-    // MARK: - Delete Data
+-    
+-    /// Delete a user from Firestore
+-    func deleteUser(userID: String, completion: @escaping (Result<Void, Error>) -> Void) {
+-        let userRef = db.collection("users").document(userID)
+-        
+-        userRef.delete { error in
+-            if let error = error {
+-                completion(.failure(error))
+-            } else {
+-                completion(.success(()))
+-            }
+-        }
+-    }
+-    
+-    // MARK: - Fetch All Users
+-    
+-    /// Fetch all users in the "users" collection
+-    func fetchAllUsers(completion: @escaping (Result<[[String: Any]], Error>) -> Void) {
+-        db.collection("users").getDocuments { (snapshot, error) in
+-            if let error = error {
+-                completion(.failure(error))
+-            } else if let snapshot = snapshot {
+-                let users = snapshot.documents.map { $0.data() }
+-                completion(.success(users))
++            
++            self.courses = documents.compactMap { document -> Course? in
++                try? document.data(as: Course.self)
+             }
+         }
+     }
+diff --git a/SDU_App/res/strings/en.lproj/courses_details.strings b/SDU_App/res/strings/en.lproj/courses_details.strings
+index b6b184c..37af046 100644
+--- a/SDU_App/res/strings/en.lproj/courses_details.strings
++++ b/SDU_App/res/strings/en.lproj/courses_details.strings
+@@ -43,7 +43,8 @@
+ "c_teacher_name_css_312_l" = "Bauyrzhan Berlikozha";
+ //"c_teacher_name_css_312_p" = "Nurbol Moldabay";
+ "c_teacher_name_css_312_p" = "Maksat Maratov";
+-"c_teacher_name_inf_405" = "Alina Bedelkhanova";
++//"c_teacher_name_inf_405" = "Alina Bedelkhanova";
++"c_teacher_name_inf_405" = "Nuray Dauletkhan";
+ "c_teacher_name_inf_228" = "Ali Baigelenov";
+ "c_teacher_name_css_319" = "Nazym Turysbek";
+ 
+diff --git a/SDU_App/res/strings/kk.lproj/courses_details.strings b/SDU_App/res/strings/kk.lproj/courses_details.strings
+index 45d050c..298aff4 100644
+--- a/SDU_App/res/strings/kk.lproj/courses_details.strings
++++ b/SDU_App/res/strings/kk.lproj/courses_details.strings
+@@ -43,7 +43,8 @@
+ "c_teacher_name_css_312_l" = "Бауыржан Берліқожа";
+ //"c_teacher_name_css_312_p" = "Нұрбол Молдабай";
+ "c_teacher_name_css_312_p" = "Мақсат Маратов";
+-"c_teacher_name_inf_405" = "Алина Беделханова";
++//"c_teacher_name_inf_405" = "Алина Беделханова";
++"c_teacher_name_inf_405" = "Нұрай Дәулетхат";
+ "c_teacher_name_inf_228" = "Али Байгеленов";
+ "c_teacher_name_css_319" = "Назым Тұрысбек";
+ 
+diff --git a/SDU_App/res/strings/ru.lproj/courses_details.strings b/SDU_App/res/strings/ru.lproj/courses_details.strings
+index 1710cd3..c819a0b 100644
+--- a/SDU_App/res/strings/ru.lproj/courses_details.strings
++++ b/SDU_App/res/strings/ru.lproj/courses_details.strings
+@@ -43,7 +43,8 @@
+ "c_teacher_name_css_312_l" = "Бауыржан Берліқожа";
+ //"c_teacher_name_css_312_p" = "Нұрбол Молдабай";
+ "c_teacher_name_css_312_p" = "Мақсат Маратов";
+-"c_teacher_name_inf_405" = "Алина Беделханова";
++//"c_teacher_name_inf_405" = "Алина Беделханова";
++"c_teacher_name_inf_405" = "Нұрай Дәулетхат";
+ "c_teacher_name_inf_228" = "Али Байгеленов";
+ "c_teacher_name_css_319" = "Назым Тұрысбек";
+ 
+diff --git a/SDU_App/screens/Schedule/screen_schedule.swift b/SDU_App/screens/screen_schedule.swift
+similarity index 96%
+rename from SDU_App/screens/Schedule/screen_schedule.swift
+rename to SDU_App/screens/screen_schedule.swift
+index e340f74..edb87d1 100644
+--- a/SDU_App/screens/Schedule/screen_schedule.swift
++++ b/SDU_App/screens/screen_schedule.swift
+@@ -10,16 +10,7 @@ import SwiftUI
+ 
+ 
+ 
+-struct Course {
+-    var day: String
+-    var time: String
+-    var title: String
+-    //var course_code: String // Код курса
+-    var location: String
+-    var type: String
+-    var professor: String
+-    var onlineLink: String? // Ссылка на онлайн урок
+-}
++
+ 
+ 
+ 
+@@ -305,8 +296,20 @@ struct CourseItem: View {
+         .padding(.horizontal)
+         
+         // Горизонтальная линия в качестве разделителя
+-        Divider()
+-            .background(.primary)
++        RoundedDivider(color: .primary, width: 2, cornerRadius: 5)
++            
++    }
++}
++
++struct RoundedDivider: View {
++    let color: Color
++    let width: CGFloat // Теперь используем ширину для толщины линии
++    let cornerRadius: CGFloat
++
++    var body: some View {
++        Capsule() // Используем Capsule вместо Rectangle
++            .background(Color(.gray))
++            .frame(width: width) // Фиксированная ширина, растягиваем по высоте
+     }
+ }
+ 

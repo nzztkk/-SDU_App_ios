@@ -272,17 +272,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		14D2BC352C92A12200E4CB6D /* languages */ = {
-			isa = PBXGroup;
-			children = (
-				14D2BC322C92A11B00E4CB6D /* Localizable.strings */,
-			);
-			path = languages;
-			sourceTree = "<group>";
-		};
 		14D2BC362C92A13400E4CB6D /* strings */ = {
 			isa = PBXGroup;
 			children = (
+				14D2BC322C92A11B00E4CB6D /* Localizable.strings */,
 				14D2BC372C92A14A00E4CB6D /* sys_w.strings */,
 				14D2BC3A2C93E37C00E4CB6D /* courses_details.strings */,
 				147C9E1F2C976C0500268345 /* StringCalls.swift */,
@@ -306,7 +299,6 @@
 				147C9E1A2C974EB100268345 /* Geometry */,
 				147C9E192C97499600268345 /* Color */,
 				14D2BC362C92A13400E4CB6D /* strings */,
-				14D2BC352C92A12200E4CB6D /* languages */,
 			);
 			path = res;
 			sourceTree = "<group>";
