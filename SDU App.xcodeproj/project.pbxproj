@@ -143,6 +143,7 @@
 				141D31A62C81CECF00B7D303 /* SDU_AppUITests */,
 				14D1CA162C9F4FF700F376C0 /* Frameworks */,
 				141D318A2C81CECE00B7D303 /* Products */,
+				140C58C92CDFBA7300DA7FF4 /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,7 +169,6 @@
 				141D31902C81CECF00B7D303 /* Assets.xcassets */,
 				141D31922C81CECF00B7D303 /* Preview Content */,
 				14E104F02C910603001A7F36 /* ViewBox.swift */,
-				140C58C92CDFBA7300DA7FF4 /* .gitignore */,
 				147C9E1D2C975FF700268345 /* WeekView.swift */,
 			);
 			path = SDU_App;
