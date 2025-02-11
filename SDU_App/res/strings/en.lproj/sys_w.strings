@@ -6,10 +6,6 @@
   
 */
 
-
-"login_button" = "Login";
-//"signup_button" = "Sign Up";
-
 //Pages
 "schedule_p" = "Schedule";
 "courses_p" = "Courses";
@@ -20,4 +16,23 @@
 //Notification text
 "ntfy_start_time" = "Lesson starts at %@";
 "ntfy_location" = "in the %@ classroom";
+
+
+
+//LOG IN PAGE STRINGS
+
+"login_b" = "Log In";
+"" = "";
+
+
+"passwrd" = "Password";
+"sdu_id" = "Student ID";
+
+
+"privacy_policy" = "This app was created for a future diploma project, not for commercial use.";
+"use_portal_data" = "Please use your SDU portal credentials to log in.";
+"welcome" = "Welcome to the SDU App! 👋";"" = "";
+"" = "";
+"" = "";
+"" = "";
 

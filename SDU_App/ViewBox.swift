@@ -1,30 +1,22 @@
-//
-//  ViewBox.swift
-//  SDU_App
-//
-//  Created by Nurkhat on 11.09.2024.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     @State private var currentWeek: Int = 1 // Текущая неделя
     @State private var isWeekSelectorVisible: Bool = true // Контроль видимости панели с неделями
-
+    @State private var selectedTab: Int = 0 // Текущая выбранная вкладка
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             // Экран с расписанием
             NavigationView {
                 VStack(spacing: 0) {
-                    // Панель с неделями и датой
                     if isWeekSelectorVisible {
                         WeekSelectorView(currentWeek: $currentWeek)
-                            .zIndex(1) // Поднимаем над остальными элементами
+                            .zIndex(1)
                             .transition(.move(edge: .top))
-                            .animation(.easeInOut(duration: 0.3), value: isWeekSelectorVisible) // Анимация скрытия
+                            .animation(.easeInOut(duration: 0.3), value: isWeekSelectorVisible)
                     }
                     
-                    // Основной экран с расписанием
                     ScrollView {
                         SchedulePage()
                             .padding(.top, 10)
@@ -32,47 +24,52 @@ struct ContentView: View {
                                 Color.clear
                                     .onChange(of: proxy.frame(in: .global).minY) { newValue in
                                         withAnimation {
-                                            // Если пользователь прокручивает вверх - показываем панель, вниз - скрываем
                                             isWeekSelectorVisible = newValue > 0
                                         }
                                     }
                             })
                     }
                 }
-                .navigationBarTitle("schedule_p".syswords, displayMode: .inline) // Надпись Расписание сверху
+                .navigationBarTitle("schedule_p".syswords, displayMode: .inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
                             print("Кнопка нажата")
                         }) {
                             Image(systemName: "person.crop.circle")
-                                
                         }
                     }
                 }
             }
             .tabItem {
-                Label("schedule_p".syswords, systemImage: "graduationcap.fill")
+                Image(uiImage: UIImage(named: selectedTab == 0 ? "schedule-fill" : "schedule-outline") ?? UIImage())
+                Text("schedule_p".syswords)
             }
-
+            .tag(0)
+            
             // Страница курсов
             NavigationView {
                 CoursesPage()
                     .navigationBarTitle("courses_p".syswords, displayMode: .inline)
             }
             .tabItem {
-                Label("courses_p".syswords, systemImage: "square.and.pencil")
+                Image(uiImage: UIImage(named: selectedTab == 1 ? "courses-fill" : "courses-outline") ?? UIImage())
+                Text("courses_p".syswords)
             }
-
+            .tag(1)
+            
             // Страница дедлайнов
             NavigationView {
                 DeadlinesPage()
                     .navigationBarTitle("deadlines_p".syswords, displayMode: .inline)
             }
             .tabItem {
-                Label("deadlines_p".syswords, systemImage: "flame.fill")
+                Image(uiImage: UIImage(named: selectedTab == 2 ? "deadlines-fill" : "deadlines-outline") ?? UIImage())
+                Text("deadlines_p".syswords)
             }
+            .tag(2)
         }
+        .animation(.easeInOut(duration: 0.3), value: selectedTab)
     }
 }
 

@@ -24,6 +24,8 @@
 		147C9E1E2C975FF700268345 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E1D2C975FF700268345 /* WeekView.swift */; };
 		147C9E202C976C0500268345 /* StringCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E1F2C976C0500268345 /* StringCalls.swift */; };
 		147C9E272C98B50A00268345 /* Waterfall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E262C98B50A00268345 /* Waterfall.swift */; };
+		14A7ACC92CF501F700025CCE /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7ACC82CF501F000025CCE /* Shimmer.swift */; };
+		14A7ACCB2CF5027F00025CCE /* HerokuAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7ACCA2CF5027900025CCE /* HerokuAPI.swift */; };
 		14C4764F2C9C40AB00F8B8E3 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C4764E2C9C40A300F8B8E3 /* ScheduleManager.swift */; };
 		14C476512C9C419400F8B8E3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C476502C9C418D00F8B8E3 /* NotificationManager.swift */; };
 		14C476532C9C482600F8B8E3 /* ntfy-test(это просто какой то прикол).apns in Resources */ = {isa = PBXBuildFile; fileRef = 14C476522C9C481B00F8B8E3 /* ntfy-test(это просто какой то прикол).apns */; };
@@ -84,6 +86,8 @@
 		147C9E1D2C975FF700268345 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		147C9E1F2C976C0500268345 /* StringCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalls.swift; sourceTree = "<group>"; };
 		147C9E262C98B50A00268345 /* Waterfall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waterfall.swift; sourceTree = "<group>"; };
+		14A7ACC82CF501F000025CCE /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
+		14A7ACCA2CF5027900025CCE /* HerokuAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuAPI.swift; sourceTree = "<group>"; };
 		14C4764E2C9C40A300F8B8E3 /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
 		14C476502C9C418D00F8B8E3 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		14C476522C9C481B00F8B8E3 /* ntfy-test(это просто какой то прикол).apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ntfy-test(это просто какой то прикол).apns"; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		140C58CB2CE0E11400DA7FF4 /* pages */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = pages; sourceTree = "<group>"; };
+		1444F6472D5B364500A99D5A /* icons */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = icons; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +233,7 @@
 		147C9E252C98B4E300268345 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				14A7ACC82CF501F000025CCE /* Shimmer.swift */,
 				147C9E262C98B50A00268345 /* Waterfall.swift */,
 			);
 			path = Animation;
@@ -261,6 +267,7 @@
 		14D1CA152C9F4D2C00F376C0 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				14A7ACCA2CF5027900025CCE /* HerokuAPI.swift */,
 				14C4765B2C9C608C00F8B8E3 /* GoogleService-Info.plist */,
 			);
 			path = API;
@@ -298,6 +305,7 @@
 		14E104EC2C90B356001A7F36 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				1444F6472D5B364500A99D5A /* icons */,
 				147C9E1A2C974EB100268345 /* Geometry */,
 				147C9E192C97499600268345 /* Color */,
 				14D2BC362C92A13400E4CB6D /* strings */,
@@ -333,6 +341,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				140C58CB2CE0E11400DA7FF4 /* pages */,
+				1444F6472D5B364500A99D5A /* icons */,
 			);
 			name = "SDU App";
 			packageProductDependencies = (
@@ -483,8 +492,10 @@
 				14C476512C9C419400F8B8E3 /* NotificationManager.swift in Sources */,
 				14E104EE2C90BA41001A7F36 /* screen_schedule.swift in Sources */,
 				14E104F32C91B3F5001A7F36 /* screen_courses.swift in Sources */,
+				14A7ACCB2CF5027F00025CCE /* HerokuAPI.swift in Sources */,
 				14C4764F2C9C40AB00F8B8E3 /* ScheduleManager.swift in Sources */,
 				14E104F52C91B49B001A7F36 /* screen_deadlines.swift in Sources */,
+				14A7ACC92CF501F700025CCE /* Shimmer.swift in Sources */,
 				14E104F12C910603001A7F36 /* ViewBox.swift in Sources */,
 				147C9E182C97498400268345 /* Color.swift in Sources */,
 			);

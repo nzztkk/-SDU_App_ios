@@ -8,45 +8,58 @@
 import Foundation
 import SwiftUI
 
-struct Course: Identifiable, Hashable {
-    let id = UUID()
-    var day: String
-    var time: String
-    var title: String
-    var location: String
-    var type: String
-    var professor: String
-    var onlineLink: String?
 
-    init(data: [String: Any]) {
-        self.day = data["day"] as? String ?? ""
-        self.time = "\(data["timeStart"] as? String ?? "") - \(data["timeEnd"] as? String ?? "")"
-        self.title = data["title"] as? String ?? ""
-        self.location = data["location"] as? String ?? ""
-        self.type = data["type"] as? String ?? ""
-        self.professor = data["professor"] as? String ?? ""
-        self.onlineLink = data["onlineLink"] as? String
+struct Course: Identifiable, Decodable {
+    let id = UUID() // Генерируем локальный идентификатор
+    let timeStart: String
+    let timeEnd: String
+    let day: String
+    let courseCode: String
+    let courseName: String
+    let credits: String
+    let group: String
+    let professor: String
+    let classroom: String
+    let onlineLink: String?
+
+    private enum CodingKeys: String, CodingKey {
+        case timeStart = "time_start"
+        case timeEnd = "time_end"
+        case day
+        case courseCode = "course_code"
+        case courseName = "course_name"
+        case credits
+        case group
+        case professor
+        case classroom
+        case onlineLink = "online_link"
     }
 }
 
 struct SchedulePage: View {
     @State private var expandedDays: Set<String> = []
-    @ObservedObject var dbConnection = DatabaseConnection()  // Использование DatabaseConnection
+    @ObservedObject var dbConnection = DatabaseConnection()
     @State private var isLoading = false
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                ForEach(filteredDaysOfWeek(), id: \.self) { day in
-                    let coursesForDay = dbConnection.courses.filter { $0.day == day }
-                    if !coursesForDay.isEmpty {
-                        DaySection(
-                            day: day,
-                            courses: coursesForDay,
-                            isExpanded: expandedDays.contains(day),
-                            toggleExpanded: { toggleDayExpansion(day: day) }
-                        )
-                        .animation(.easeInOut(duration: 0.3), value: expandedDays)
+                if dbConnection.isLoading {
+                    ForEach(0..<5, id: \.self) { _ in
+                        ShimmerRow()
+                    }
+                } else {
+                    ForEach(filteredDaysOfWeek(), id: \.self) { day in
+                        let coursesForDay = dbConnection.courses.filter { $0.day == day }
+                        if !coursesForDay.isEmpty {
+                            DaySection(
+                                day: day,
+                                courses: coursesForDay,
+                                isExpanded: expandedDays.contains(day),
+                                toggleExpanded: { toggleDayExpansion(day: day) }
+                            )
+                            .animation(.easeInOut(duration: 0.3), value: expandedDays)
+                        }
                     }
                 }
             }
@@ -63,7 +76,7 @@ struct SchedulePage: View {
         }
         .navigationTitle("schedule_p".syswords)
         .overlay(alignment: .center) {
-            if dbConnection.isLoading {  // Используем isLoading, определенное в DatabaseConnection
+            if dbConnection.isLoading {
                 ProgressView()
             }
         }
@@ -76,7 +89,7 @@ struct SchedulePage: View {
             }
         }
         .onChange(of: dbConnection.isLoading) { newValue in
-            isLoading = newValue  // Привязка состояния isLoading
+            isLoading = newValue
         }
     }
 
@@ -178,6 +191,7 @@ struct CourseItem: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .center) {
+                // Номер курса
                 Text("\(number)")
                     .font(.subheadline)
                     .foregroundColor(.white)
@@ -186,38 +200,37 @@ struct CourseItem: View {
                     .cornerRadius(10, corners: [.topRight, .bottomRight])
                     .padding(.leading, -40)
 
-                Text(course.type.lc)
-                    .font(.subheadline)
-                    .bold()
-                    .foregroundColor(getCourseTypeColor(type: course.type))
-
-                Spacer()
-
-                Text(course.time)
+                // Время занятия
+                Text("\(course.timeStart) - \(course.timeEnd)")
                     .font(.subheadline)
                     .bold()
                     .foregroundColor(.gray)
+
+                Spacer()
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text(course.title)
+                // Название курса
+                Text(course.courseName)
                     .font(.body)
                     .foregroundColor(.primary)
                     .lineLimit(nil)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
+                // Аудитория
                 HStack(alignment: .center) {
                     Image(systemName: "door.left.hand.closed")
                         .foregroundColor(.gray)
-                    Text(": \(course.location)")
+                    Text(": \(course.classroom)")
                         .font(.footnote)
                         .foregroundColor(.gray)
 
                     Spacer()
                 }
 
+                // Преподаватель
                 HStack(alignment: .center) {
                     Image(systemName: "person.fill")
                         .foregroundColor(.gray)
@@ -226,6 +239,21 @@ struct CourseItem: View {
                         .foregroundColor(.gray)
 
                     Spacer()
+                }
+
+                // Онлайн-ссылка (если есть)
+                if let onlineLink = course.onlineLink {
+                    HStack(alignment: .center) {
+                        Image(systemName: "link")
+                            .foregroundColor(.gray)
+                        Link("online_lesson_link".lc, destination: URL(string: onlineLink)!)
+                            .font(.footnote)
+                            .foregroundColor(.blue)
+                            .lineLimit(1)
+                            .truncationMode(.middle)
+
+                        Spacer()
+                    }
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
