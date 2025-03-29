@@ -33,9 +33,7 @@ struct SDU_App: App {
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        // MARK: Firebase initialization
-        FirebaseApp.configure()
-        let db = Firestore.firestore()
+        
         
         UNUserNotificationCenter.current().delegate = self
         return true

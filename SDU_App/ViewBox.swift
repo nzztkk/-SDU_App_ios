@@ -42,7 +42,11 @@ struct ContentView: View {
                 }
             }
             .tabItem {
-                Image(uiImage: UIImage(named: selectedTab == 0 ? "schedule-fill" : "schedule-outline") ?? UIImage())
+                if let image = UIImage(named: selectedTab == 0 ? "schedule-fill" : "schedule-outline") {
+                    Image(uiImage: image)
+                } else {
+                    Image(systemName: "calendar")
+                }
                 Text("schedule_p".syswords)
             }
             .tag(0)
@@ -53,7 +57,11 @@ struct ContentView: View {
                     .navigationBarTitle("courses_p".syswords, displayMode: .inline)
             }
             .tabItem {
-                Image(uiImage: UIImage(named: selectedTab == 1 ? "courses-fill" : "courses-outline") ?? UIImage())
+                if let image = UIImage(named: selectedTab == 1 ? "courses-fill" : "courses-outline") {
+                    Image(uiImage: image)
+                } else {
+                    Image(systemName: "book")
+                }
                 Text("courses_p".syswords)
             }
             .tag(1)
@@ -64,7 +72,11 @@ struct ContentView: View {
                     .navigationBarTitle("deadlines_p".syswords, displayMode: .inline)
             }
             .tabItem {
-                Image(uiImage: UIImage(named: selectedTab == 2 ? "deadlines-fill" : "deadlines-outline") ?? UIImage())
+                if let image = UIImage(named: selectedTab == 2 ? "deadlines-fill" : "deadlines-outline") {
+                    Image(uiImage: image)
+                } else {
+                    Image(systemName: "flame")
+                }
                 Text("deadlines_p".syswords)
             }
             .tag(2)

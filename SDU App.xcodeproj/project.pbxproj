@@ -14,6 +14,14 @@
 		141D319E2C81CECF00B7D303 /* SDU_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D319D2C81CECF00B7D303 /* SDU_AppTests.swift */; };
 		141D31A82C81CECF00B7D303 /* SDU_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D31A72C81CECF00B7D303 /* SDU_AppUITests.swift */; };
 		141D31AA2C81CECF00B7D303 /* SDU_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D31A92C81CECF00B7D303 /* SDU_AppUITestsLaunchTests.swift */; };
+		146C1AB22D8436B400324750 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 146C1AB12D8436B000324750 /* .env */; };
+		146CE6FE2D882AF2008B3F3E /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 146CE6FD2D882AF2008B3F3E /* Auth */; };
+		146CE7002D882AF2008B3F3E /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 146CE6FF2D882AF2008B3F3E /* Functions */; };
+		146CE7022D882AF2008B3F3E /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 146CE7012D882AF2008B3F3E /* PostgREST */; };
+		146CE7042D882AF2008B3F3E /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 146CE7032D882AF2008B3F3E /* Realtime */; };
+		146CE7062D882AF2008B3F3E /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 146CE7052D882AF2008B3F3E /* Storage */; };
+		146CE7082D882AF2008B3F3E /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 146CE7072D882AF2008B3F3E /* Supabase */; };
+		146CE70B2D882E0E008B3F3E /* SwiftDotenv in Frameworks */ = {isa = PBXBuildFile; productRef = 146CE70A2D882E0E008B3F3E /* SwiftDotenv */; };
 		147C9E0E2C9630CF00268345 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 147C9E0D2C9630CF00268345 /* FirebaseAnalytics */; };
 		147C9E102C9630CF00268345 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 147C9E0F2C9630CF00268345 /* FirebaseAnalyticsOnDeviceConversion */; };
 		147C9E122C9630CF00268345 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 147C9E112C9630CF00268345 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -24,12 +32,11 @@
 		147C9E1E2C975FF700268345 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E1D2C975FF700268345 /* WeekView.swift */; };
 		147C9E202C976C0500268345 /* StringCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E1F2C976C0500268345 /* StringCalls.swift */; };
 		147C9E272C98B50A00268345 /* Waterfall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C9E262C98B50A00268345 /* Waterfall.swift */; };
+		148A93952D89E5B8004A18D6 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 148A93942D89E5B8004A18D6 /* Secrets.plist */; };
 		14A7ACC92CF501F700025CCE /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7ACC82CF501F000025CCE /* Shimmer.swift */; };
-		14A7ACCB2CF5027F00025CCE /* HerokuAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A7ACCA2CF5027900025CCE /* HerokuAPI.swift */; };
 		14C4764F2C9C40AB00F8B8E3 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C4764E2C9C40A300F8B8E3 /* ScheduleManager.swift */; };
 		14C476512C9C419400F8B8E3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C476502C9C418D00F8B8E3 /* NotificationManager.swift */; };
 		14C476532C9C482600F8B8E3 /* ntfy-test(это просто какой то прикол).apns in Resources */ = {isa = PBXBuildFile; fileRef = 14C476522C9C481B00F8B8E3 /* ntfy-test(это просто какой то прикол).apns */; };
-		14C4765C2C9C608C00F8B8E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14C4765B2C9C608C00F8B8E3 /* GoogleService-Info.plist */; };
 		14C4765F2C9D286E00F8B8E3 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C4765E2C9D286800F8B8E3 /* DatabaseManager.swift */; };
 		14D1CA182C9F4FF700F376C0 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 14D1CA172C9F4FF700F376C0 /* Algorithms */; };
 		14D1CA1A2C9F500A00F376C0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 14D1CA192C9F500A00F376C0 /* FirebaseFirestore */; };
@@ -74,6 +81,7 @@
 		141D31A32C81CECF00B7D303 /* SDU AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SDU AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		141D31A72C81CECF00B7D303 /* SDU_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDU_AppUITests.swift; sourceTree = "<group>"; };
 		141D31A92C81CECF00B7D303 /* SDU_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDU_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		146C1AB12D8436B000324750 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		147C9DEF2C951C0400268345 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/courses_details.strings; sourceTree = "<group>"; };
 		147C9DF02C951C5C00268345 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/sys_w.strings; sourceTree = "<group>"; };
 		147C9DF72C95257800268345 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -86,12 +94,11 @@
 		147C9E1D2C975FF700268345 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		147C9E1F2C976C0500268345 /* StringCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalls.swift; sourceTree = "<group>"; };
 		147C9E262C98B50A00268345 /* Waterfall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waterfall.swift; sourceTree = "<group>"; };
+		148A93942D89E5B8004A18D6 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		14A7ACC82CF501F000025CCE /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
-		14A7ACCA2CF5027900025CCE /* HerokuAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuAPI.swift; sourceTree = "<group>"; };
 		14C4764E2C9C40A300F8B8E3 /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
 		14C476502C9C418D00F8B8E3 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		14C476522C9C481B00F8B8E3 /* ntfy-test(это просто какой то прикол).apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ntfy-test(это просто какой то прикол).apns"; sourceTree = "<group>"; };
-		14C4765B2C9C608C00F8B8E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14C4765E2C9D286800F8B8E3 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		14D1CA212CA06EB500F376C0 /* DatabaseConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
 		14D2BC382C92A14A00E4CB6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/sys_w.strings; sourceTree = "<group>"; };
@@ -115,12 +122,19 @@
 				14D1CA182C9F4FF700F376C0 /* Algorithms in Frameworks */,
 				147C9E142C9630CF00268345 /* FirebaseAppCheck in Frameworks */,
 				14D1CA1E2C9F501900F376C0 /* FirebaseStorage in Frameworks */,
+				146CE7062D882AF2008B3F3E /* Storage in Frameworks */,
 				14D1CA202C9F504C00F376C0 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				147C9E0E2C9630CF00268345 /* FirebaseAnalytics in Frameworks */,
 				147C9E162C9630CF00268345 /* FirebaseAppDistribution-Beta in Frameworks */,
+				146CE7022D882AF2008B3F3E /* PostgREST in Frameworks */,
+				146CE7042D882AF2008B3F3E /* Realtime in Frameworks */,
+				146CE7002D882AF2008B3F3E /* Functions in Frameworks */,
 				147C9E122C9630CF00268345 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				147C9E102C9630CF00268345 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				146CE7082D882AF2008B3F3E /* Supabase in Frameworks */,
+				146CE70B2D882E0E008B3F3E /* SwiftDotenv in Frameworks */,
 				14D1CA1C2C9F501200F376C0 /* FirebaseDatabase in Frameworks */,
+				146CE6FE2D882AF2008B3F3E /* Auth in Frameworks */,
 				14D1CA1A2C9F500A00F376C0 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,8 +281,8 @@
 		14D1CA152C9F4D2C00F376C0 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				14A7ACCA2CF5027900025CCE /* HerokuAPI.swift */,
-				14C4765B2C9C608C00F8B8E3 /* GoogleService-Info.plist */,
+				146C1AB12D8436B000324750 /* .env */,
+				148A93942D89E5B8004A18D6 /* Secrets.plist */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -355,6 +369,13 @@
 				14D1CA1B2C9F501200F376C0 /* FirebaseDatabase */,
 				14D1CA1D2C9F501900F376C0 /* FirebaseStorage */,
 				14D1CA1F2C9F504C00F376C0 /* FirebaseFirestoreCombine-Community */,
+				146CE6FD2D882AF2008B3F3E /* Auth */,
+				146CE6FF2D882AF2008B3F3E /* Functions */,
+				146CE7012D882AF2008B3F3E /* PostgREST */,
+				146CE7032D882AF2008B3F3E /* Realtime */,
+				146CE7052D882AF2008B3F3E /* Storage */,
+				146CE7072D882AF2008B3F3E /* Supabase */,
+				146CE70A2D882E0E008B3F3E /* SwiftDotenv */,
 			);
 			productName = SDU_App;
 			productReference = 141D31892C81CECE00B7D303 /* SDU App.app */;
@@ -404,7 +425,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					141D31882C81CECE00B7D303 = {
 						CreatedOnToolsVersion = 15.4;
@@ -433,6 +454,8 @@
 			packageReferences = (
 				147C9E092C962A2400268345 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				147C9E0C2C9630CF00268345 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				146CE6FC2D882AF2008B3F3E /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				146CE7092D882E0E008B3F3E /* XCRemoteSwiftPackageReference "swift-dotenv" */,
 			);
 			productRefGroup = 141D318A2C81CECE00B7D303 /* Products */;
 			projectDirPath = "";
@@ -452,12 +475,13 @@
 			files = (
 				140C58CA2CDFBA8900DA7FF4 /* .gitignore in Resources */,
 				141D31942C81CECF00B7D303 /* Preview Assets.xcassets in Resources */,
+				148A93952D89E5B8004A18D6 /* Secrets.plist in Resources */,
 				14D2BC392C92A14A00E4CB6D /* sys_w.strings in Resources */,
+				146C1AB22D8436B400324750 /* .env in Resources */,
 				14D2BC342C92A11B00E4CB6D /* Localizable.strings in Resources */,
 				14D2BC3C2C93E37C00E4CB6D /* courses_details.strings in Resources */,
 				14C476532C9C482600F8B8E3 /* ntfy-test(это просто какой то прикол).apns in Resources */,
 				141D31912C81CECF00B7D303 /* Assets.xcassets in Resources */,
-				14C4765C2C9C608C00F8B8E3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +516,6 @@
 				14C476512C9C419400F8B8E3 /* NotificationManager.swift in Sources */,
 				14E104EE2C90BA41001A7F36 /* screen_schedule.swift in Sources */,
 				14E104F32C91B3F5001A7F36 /* screen_courses.swift in Sources */,
-				14A7ACCB2CF5027F00025CCE /* HerokuAPI.swift in Sources */,
 				14C4764F2C9C40AB00F8B8E3 /* ScheduleManager.swift in Sources */,
 				14E104F52C91B49B001A7F36 /* screen_deadlines.swift in Sources */,
 				14A7ACC92CF501F700025CCE /* Shimmer.swift in Sources */,
@@ -572,6 +595,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -635,6 +659,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -765,7 +790,6 @@
 		141D31B12C81CECF00B7D303 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
@@ -786,7 +810,6 @@
 		141D31B22C81CECF00B7D303 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
@@ -807,7 +830,6 @@
 		141D31B42C81CECF00B7D303 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -826,7 +848,6 @@
 		141D31B52C81CECF00B7D303 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -884,6 +905,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		146CE6FC2D882AF2008B3F3E /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+		146CE7092D882E0E008B3F3E /* XCRemoteSwiftPackageReference "swift-dotenv" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thebarndog/swift-dotenv";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 		147C9E092C962A2400268345 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-algorithms.git";
@@ -903,6 +940,41 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		146CE6FD2D882AF2008B3F3E /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 146CE6FC2D882AF2008B3F3E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		146CE6FF2D882AF2008B3F3E /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 146CE6FC2D882AF2008B3F3E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		146CE7012D882AF2008B3F3E /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 146CE6FC2D882AF2008B3F3E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		146CE7032D882AF2008B3F3E /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 146CE6FC2D882AF2008B3F3E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		146CE7052D882AF2008B3F3E /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 146CE6FC2D882AF2008B3F3E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		146CE7072D882AF2008B3F3E /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 146CE6FC2D882AF2008B3F3E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+		146CE70A2D882E0E008B3F3E /* SwiftDotenv */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 146CE7092D882E0E008B3F3E /* XCRemoteSwiftPackageReference "swift-dotenv" */;
+			productName = SwiftDotenv;
+		};
 		147C9E0D2C9630CF00268345 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 147C9E0C2C9630CF00268345 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

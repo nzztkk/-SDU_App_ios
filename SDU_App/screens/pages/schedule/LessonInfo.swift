@@ -58,17 +58,17 @@ struct LessonInfoPage: View {
             }
 
             // Онлайн-ссылка
-            if let onlineLink = course.onlineLink {
-                HStack {
-                    Image(systemName: "link")
-                        .foregroundColor(.gray)
-                    Text(": ")
-                        .foregroundColor(.gray)
-                    Link("online_lesson_link".lc, destination: URL(string: onlineLink)!)
-                        .font(.subheadline)
-                        .foregroundColor(.blue)
-                }
-            }
+//            if let onlineLink = course.onlineLink {
+//                HStack {
+//                    Image(systemName: "link")
+//                        .foregroundColor(.gray)
+//                    Text(": ")
+//                        .foregroundColor(.gray)
+//                    Link("online_lesson_link".lc, destination: URL(string: onlineLink)!)
+//                        .font(.subheadline)
+//                        .foregroundColor(.blue)
+//                }
+//            }
 
             Spacer()
         }
