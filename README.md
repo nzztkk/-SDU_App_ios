@@ -15,6 +15,10 @@
 
 Проект реализуется одним разработчиком и находится в активной разработке. Планируется представить его как дипломную работу, а в будущем — запустить в университете для всех студентов.
 
+### 🚧 Статус
+
+Разработка еще продолжается. Обновления и улучшения добавляются постепенно по мере появления свободного времени
+
 ---------
 
 
@@ -31,5 +35,9 @@
 This app was created to solve a simple but important problem — the lack of a convenient tool for accessing academic information. The university’s internal portal can be hard to use, especially on mobile. SDU App aims to provide a simpler and more user-friendly alternative.
 
 The project is currently being developed by a single person and is still in progress. The app is intended to be presented as a graduation project and, if successful, to be launched for use across the university.
+
+### 🚧 Status
+
+The development is still ongoing. Updates and improvements are added gradually as free time becomes available.
 
 ---
