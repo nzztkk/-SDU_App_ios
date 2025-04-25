@@ -19,16 +19,14 @@
 
 Разработка еще продолжается. Обновления и улучшения добавляются постепенно по мере появления свободного времени
 
----
+### 📌 Важно: 
+Данный проект разрабатывается как часть дипломной работы.  
+Любое использование или копирование с целью представления в образовательных учреждениях запрещено.
 
 ### 📄 License
 
 This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.  
 See the [`LICENSE`](./LICENSE) file for details.
-
-### 📌 Важно: 
-Данный проект разрабатывается как часть дипломной работы.  
-Любое использование или копирование с целью представления в образовательных учреждениях запрещено.
 
 ---------
 
@@ -51,15 +49,13 @@ The project is currently being developed by a single person and is still in prog
 
 The development is still ongoing. Updates and improvements are added gradually as free time becomes available.
 
----
+### 📌 Important
+This project is being developed as part of the Diploma work.  
+Any use or copying for the purpose of presentation in educational institutions is prohibited.
 
 ### 📄 License
 
 This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.  
 See the [`LICENSE`](./LICENSE) file for details.
-
-### 📌 Important
-This project is being developed as part of the Diploma work.  
-Any use or copying for the purpose of presentation in educational institutions is prohibited.
 
 ---
