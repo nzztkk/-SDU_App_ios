@@ -1,9 +1,11 @@
 # 📘 SDU App
+---------
+### ⚠️ Статус
 
-### 🚧 Статус
+**Было принято решение переделать проект с нуля, по этой причине данная версия не является актуальной.**
+**Вскоре актуальная версия будет добавлена как новый проект.**
 
-Было принято решение переделать проект с нуля, по этой причине данная версия не является актуальной
-Вскоре актуальная версия будет добавлена как новый проект.
+---------
 
 **SDU App** — это мобильное приложение для удобного отслеживания ключевой информации об учебе в университете. С его помощью студенты могут:
 
@@ -23,12 +25,12 @@
 ---------
 
 
-### 🚧 Status
+### ⚠️ Status
 
-It was decided to redo the project from scratch, for this reason this version is not relevant.
-The current version will be added as a new project soon.
+**It was decided to redo the project from scratch, for this reason this version is not relevant.**
+**The current version will be added as a new project soon.**
 
-
+---------
 **SDU App** is a mobile application designed to help students easily access essential university-related information. With SDU App, students can:
 
 - 📅 View their class schedule  
